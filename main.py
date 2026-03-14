@@ -1,6 +1,6 @@
-def main():
-    print("Hello from school-calendar!")
+from src.main import main
 
 
 if __name__ == "__main__":
+    # uv run python main.py
     main()
