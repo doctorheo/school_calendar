@@ -4,7 +4,7 @@ from html import unescape
 from pathlib import Path
 
 import requests
-
+from rich import print as rprint
 def parse_schedule(html: str):
     sys_id_match = re.search(r'<input[^>]*id="sysId"[^>]*value="([^"]*)"', html)
     menu_id_match = re.search(r'<input[^>]*id="mi"[^>]*value="([^"]*)"', html)
@@ -64,8 +64,9 @@ def parse_schedule(html: str):
 
 
 if __name__ == "__main__":
+    # uv run python -m src.parse.schedule_parser
     html_path = Path(__file__).resolve().parents[1] / "fetch" / "output" / "school_schedule.html"
     html = html_path.read_text(encoding="utf-8")
     schedules = parse_schedule(html)
-    print(len(schedules))
-    print(schedules[:])
+    rprint(len(schedules))
+    rprint(schedules[:])
