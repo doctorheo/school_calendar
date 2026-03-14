@@ -4,7 +4,12 @@ from html import unescape
 from pathlib import Path
 
 import requests
-from rich import print as rprint
+
+
+DEFAULT_INPUT_PATH = Path(__file__).resolve().parents[1] / "fetch" / "output" / "school_schedule.html"
+DEFAULT_OUTPUT_PATH = Path(__file__).resolve().parent / "output" / "parsed_schedule.json"
+
+
 def parse_schedule(html: str):
     sys_id_match = re.search(r'<input[^>]*id="sysId"[^>]*value="([^"]*)"', html)
     menu_id_match = re.search(r'<input[^>]*id="mi"[^>]*value="([^"]*)"', html)
@@ -63,10 +68,19 @@ def parse_schedule(html: str):
     return schedules
 
 
+def save_schedule(schedules, output_path: Path = DEFAULT_OUTPUT_PATH) -> Path:
+    output_path.parent.mkdir(parents=True, exist_ok=True)
+    output_path.write_text(
+        json.dumps(schedules, ensure_ascii=False, indent=2),
+        encoding="utf-8",
+    )
+    return output_path
+
+
 if __name__ == "__main__":
     # uv run python -m src.parse.schedule_parser
-    html_path = Path(__file__).resolve().parents[1] / "fetch" / "output" / "school_schedule.html"
-    html = html_path.read_text(encoding="utf-8")
+    html = DEFAULT_INPUT_PATH.read_text(encoding="utf-8")
     schedules = parse_schedule(html)
-    rprint(len(schedules))
-    rprint(schedules[:])
+    output_path = save_schedule(schedules)
+    print(len(schedules))
+    print(output_path)
