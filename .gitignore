@@ -12,3 +12,5 @@ wheels/
 
 #other
 .specstory
+.env
+src/calendar/*.json
