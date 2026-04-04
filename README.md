@@ -62,13 +62,40 @@ pip install -r requirements.txt
 
 ```bash
 GOOGLE_SERVICE_ACCOUNT_FILE=src/calendar/service-account.json
-GOOGLE_CALENDAR_ID=
-GOOGLE_CALENDAR_NAME=
 ```
 
 - `GOOGLE_SERVICE_ACCOUNT_FILE`: 서비스 계정 JSON 경로
-- `GOOGLE_CALENDAR_ID`: 기존 캘린더에 저장할 때 사용
-- `GOOGLE_CALENDAR_NAME`: 새 캘린더 생성 시 기본 이름으로 사용
+
+실행 입력값은 환경변수 대신 TOML config 파일에서 관리합니다.
+
+## 설정 파일
+
+프로젝트 루트에 `school_calendar.toml` 파일을 만들고 `school_calendar.example.toml`을 참고해 값을 채웁니다.
+
+```toml
+[schedule]
+url = "https://bunwon-e.goegh.kr/bunwon-e/ps/schdul/selectSchdulMainList.do?mi=2547"
+parsed_output = "src/parse/output/parsed_schedule.json"
+
+[calendar]
+create = false
+id = "your_calendar_id@group.calendar.google.com"
+name = "학교 일정"
+description = "학교 학사일정 자동 동기화"
+timezone = "Asia/Seoul"
+credentials_path = "src/calendar/service-account.json"
+```
+
+- `schedule.url`: 학사일정 페이지 URL
+- `schedule.parsed_output`: 파싱 결과 JSON 저장 경로
+- `calendar.create`: 새 캘린더 생성 여부
+- `calendar.id`: 기존 캘린더에 저장할 때 사용할 캘린더 ID
+- `calendar.name`: 새 캘린더 생성 시 사용할 이름
+- `calendar.description`: 새 캘린더 설명
+- `calendar.timezone`: 캘린더와 종일 이벤트 시간대
+- `calendar.credentials_path`: 서비스 계정 JSON 파일 경로
+
+`calendar.create = true`와 `calendar.id`는 동시에 사용할 수 없습니다.
 
 ## 사용 방법
 
@@ -100,16 +127,16 @@ python src/main.py
 ./scripts/run.sh
 ```
 
-기존 캘린더에 저장:
+기본 설정 파일 사용:
 
 ```bash
-python -m src.main --calendar-id "your_calendar_id@group.calendar.google.com"
+python -m src.main
 ```
 
-새 캘린더를 생성한 뒤 저장:
+다른 config 파일 사용:
 
 ```bash
-python -m src.main --create-calendar --calendar-name "학교 일정"
+python -m src.main --config custom-config.toml
 ```
 
 모듈 단독 실행도 가능합니다.
@@ -117,8 +144,6 @@ python -m src.main --create-calendar --calendar-name "학교 일정"
 ```bash
 python -m src.calendar.google_calendar --input src/parse/output/parsed_schedule.json --create-calendar --calendar-name "학교 일정"
 ```
-
-`--calendar-id`와 `--create-calendar`는 동시에 사용할 수 없습니다.
 
 ## 현재 한계
 

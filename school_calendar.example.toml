@@ -1,0 +1,11 @@
+[schedule]
+url = "https://bunwon-e.goegh.kr/bunwon-e/ps/schdul/selectSchdulMainList.do?mi=2547"
+parsed_output = "src/parse/output/parsed_schedule.json"
+
+[calendar]
+create = false
+id = "your_calendar_id@group.calendar.google.com"
+name = "학교 일정"
+description = "학교 학사일정 자동 동기화"
+timezone = "Asia/Seoul"
+credentials_path = "src/calendar/service-account.json"
