@@ -41,4 +41,5 @@ def main():
 
 
 if __name__ == "__main__":
+    # uv run python -m src.fetch.school_schedule
     main()

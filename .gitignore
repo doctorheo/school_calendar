@@ -5,9 +5,12 @@ build/
 dist/
 wheels/
 *.egg-info
+**/output
 
 # Virtual environments
 .venv
 
 #other
 .specstory
+.env
+src/calendar/*.json
