@@ -46,6 +46,11 @@ def _build_service(credentials_path: str):
     return build("calendar", "v3", credentials=credentials)
 
 
+def _get_optional_env(name: str) -> str | None:
+    value = os.getenv(name)
+    return value or None
+
+
 def _make_event_key(title: str, start_date: str, end_date: str) -> str:
     raw = f"{title}|{start_date}|{end_date}"
     return hashlib.sha256(raw.encode("utf-8")).hexdigest()
@@ -100,6 +105,33 @@ def _to_google_event(schedule: dict[str, str], timezone: str) -> dict:
     }
 
 
+def create_calendar(
+    *,
+    summary: str,
+    credentials_path: str | None = None,
+    timezone: str = DEFAULT_TIMEZONE,
+    description: str | None = None,
+) -> dict[str, str]:
+    if not summary.strip():
+        raise ValueError("Calendar summary is required.")
+
+    credentials_path = credentials_path or _get_required_env("GOOGLE_SERVICE_ACCOUNT_FILE")
+    service = _build_service(credentials_path)
+    body = {
+        "summary": summary.strip(),
+        "timeZone": timezone,
+    }
+    if description:
+        body["description"] = description
+
+    created = service.calendars().insert(body=body).execute()
+    return {
+        "id": created["id"],
+        "summary": created.get("summary", summary.strip()),
+        "timeZone": created.get("timeZone", timezone),
+    }
+
+
 def create_calendar_events(
     schedules: Iterable[dict[str, str]],
     *,
@@ -149,6 +181,39 @@ def create_calendar_events(
     return results
 
 
+def create_calendar_and_events(
+    schedules: Iterable[dict[str, str]],
+    *,
+    calendar_summary: str | None,
+    credentials_path: str | None = None,
+    timezone: str = DEFAULT_TIMEZONE,
+    description: str | None = None,
+) -> dict[str, object]:
+    calendar_summary = calendar_summary or _get_optional_env("GOOGLE_CALENDAR_NAME")
+    if not calendar_summary:
+        raise RuntimeError(
+            "Calendar name is required when creating a calendar. "
+            "Pass --calendar-name or set GOOGLE_CALENDAR_NAME."
+        )
+
+    created_calendar = create_calendar(
+        summary=calendar_summary,
+        credentials_path=credentials_path,
+        timezone=timezone,
+        description=description,
+    )
+    results = create_calendar_events(
+        schedules,
+        calendar_id=created_calendar["id"],
+        credentials_path=credentials_path,
+        timezone=timezone,
+    )
+    return {
+        "calendar": created_calendar,
+        "events": results,
+    }
+
+
 def main() -> None:
     parser = argparse.ArgumentParser(description="Create Google Calendar events from parsed schedules.")
     parser.add_argument(
@@ -160,6 +225,21 @@ def main() -> None:
         "--calendar-id",
         default=None,
         help="Google Calendar ID. Defaults to GOOGLE_CALENDAR_ID from .env or environment.",
+    )
+    parser.add_argument(
+        "--create-calendar",
+        action="store_true",
+        help="Create a new Google Calendar before inserting events.",
+    )
+    parser.add_argument(
+        "--calendar-name",
+        default=None,
+        help="New calendar name. Defaults to GOOGLE_CALENDAR_NAME from .env or environment.",
+    )
+    parser.add_argument(
+        "--calendar-description",
+        default=None,
+        help="Optional description for a new calendar.",
     )
     parser.add_argument(
         "--credentials-path",
@@ -175,17 +255,34 @@ def main() -> None:
 
     load_dotenv()
 
+    if args.create_calendar and args.calendar_id:
+        raise RuntimeError("Use either --calendar-id or --create-calendar, not both.")
+
     input_path = Path(args.input)
     schedules = json.loads(input_path.read_text(encoding="utf-8"))
-    results = create_calendar_events(
-        schedules,
-        calendar_id=args.calendar_id,
-        credentials_path=args.credentials_path,
-        timezone=args.timezone,
-    )
+    calendar_name = args.calendar_name or _get_optional_env("GOOGLE_CALENDAR_NAME")
 
-    print(len(results))
+    if args.create_calendar:
+        results = create_calendar_and_events(
+            schedules,
+            calendar_summary=calendar_name,
+            credentials_path=args.credentials_path,
+            timezone=args.timezone,
+            description=args.calendar_description,
+        )
+    else:
+        results = create_calendar_events(
+            schedules,
+            calendar_id=args.calendar_id,
+            credentials_path=args.credentials_path,
+            timezone=args.timezone,
+        )
+
     print(json.dumps(results, ensure_ascii=False, indent=2))
+    if isinstance(results, dict):
+        print(len(results["events"]))
+    else:
+        print(len(results))
 
 
 if __name__ == "__main__":
