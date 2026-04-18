@@ -1,0 +1,3 @@
+schedule:
+  html_input: "src/fetch/output/school_schedule.html"
+  parsed_output: "src/parse/output/parsed_schedule.json"
