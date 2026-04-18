@@ -4,7 +4,7 @@ from pathlib import Path
 from dotenv import load_dotenv
 
 from src.config.app_config import DEFAULT_CONFIG_PATH, load_app_config
-from src.fetch.school_schedule import DEFAULT_URL, fetch_website
+from src.fetch.school_schedule import fetch_website
 from src.parse.schedule_parser import parse_schedule, save_schedule
 from src.calendar.google_calendar import create_calendar_and_events, create_calendar_events
 
@@ -16,13 +16,12 @@ def main() -> None:
     parser.add_argument(
         "--config",
         default=str(DEFAULT_CONFIG_PATH),
-        help="Path to TOML config file.",
+        help="Path to YAML config file.",
     )
     args = parser.parse_args()
 
     load_dotenv()
     config = load_app_config(Path(args.config))
-
     html = fetch_website(config.url)
     schedules = parse_schedule(html)
     if config.parsed_output:

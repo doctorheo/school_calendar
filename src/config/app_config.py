@@ -2,13 +2,14 @@ from __future__ import annotations
 
 from dataclasses import dataclass
 from pathlib import Path
-import tomllib
+
+import yaml
 
 from src.calendar.google_calendar import DEFAULT_TIMEZONE
 from src.fetch.school_schedule import DEFAULT_URL
 
 
-DEFAULT_CONFIG_PATH = Path("school_calendar.toml")
+DEFAULT_CONFIG_PATH = Path("src/config/school_calendar.yml")
 
 
 @dataclass(frozen=True)
@@ -53,12 +54,14 @@ def load_app_config(config_path: Path | str = DEFAULT_CONFIG_PATH) -> AppConfig:
     if not config_path.exists():
         raise RuntimeError(
             f"Config file not found: {config_path}. "
-            "Create one from 'school_calendar.example.toml'."
+            "Create one from 'src/config/school_calendar.yml'."
         )
 
-    data = tomllib.loads(config_path.read_text(encoding="utf-8"))
+    data = yaml.safe_load(config_path.read_text(encoding="utf-8"))
+    if data is None:
+        data = {}
     if not isinstance(data, dict):
-        raise RuntimeError("Config file root must be a TOML table.")
+        raise RuntimeError("Config file root must be a YAML mapping.")
 
     schedule = _get_table(data, "schedule")
     calendar = _get_table(data, "calendar")
@@ -73,9 +76,8 @@ def load_app_config(config_path: Path | str = DEFAULT_CONFIG_PATH) -> AppConfig:
     calendar_description = _get_optional_string(calendar, "description")
     timezone = _get_optional_string(calendar, "timezone") or DEFAULT_TIMEZONE
     credentials_path = _get_optional_string(calendar, "credentials_path")
-
     if create_calendar and calendar_id:
-        raise RuntimeError("Use either 'calendar.create = true' or 'calendar.id', not both.")
+        raise RuntimeError("Use either 'calendar.create: true' or 'calendar.id', not both.")
     if create_calendar and not calendar_name:
         raise RuntimeError("'calendar.name' is required when 'calendar.create = true'.")
     if not create_calendar and not calendar_id:
