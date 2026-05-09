@@ -1,0 +1,9 @@
+schedule:
+  url: "https://bunwon-e.goegh.kr/bunwon-e/ps/schdul/selectSchdulMainList.do?mi=2547"
+
+calendar:
+  create: false
+  id: "271227e2ccbb682d7c842063d28fbdac3855f8bb2fc5c6474ed4712f784db4b2@group.calendar.google.com"
+  timezone: "Asia/Seoul"
+  credentials_path: "src/calendar/service-account.json"
+  share_role: "reader"
