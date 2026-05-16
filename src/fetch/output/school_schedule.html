@@ -1,1513 +1,306 @@
-
-
-
-<!--templateType 값만 수정 -->
-
-<!--//templateType 값만 수정 -->
-<!doctype html>
-<html lang="ko">
-	<head>
-		<meta charset="utf-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-		<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0"/>
-		
-		<meta property="og:title" content="분원초등학교">
-		<!-- <meta property="og:image" content=""> -->
-		<meta property="og:description" content="학교일정 &lt; 알림마당  | 분원초등학교">
-		<meta name="description" lang="ko" content="학교일정 &lt; 알림마당  | 분원초등학교">
-		<title>학교일정 &lt; 알림마당  | 분원초등학교</title>
-		<!-- css -->
-		<link rel="stylesheet" href="/00_common/css/basic.css" media="all">
-		
-		<!-- 레이아웃 CSS -->
-		<link rel="stylesheet" href="/00_common/css/template/T0013_layout.css" media="all">
-		
-		<!-- 서브페이지인 경우에만 사용 -->
-		<link rel="stylesheet" href="/00_common/css/con_com.css" media="all">
-		<link rel="stylesheet" href="/css/web/bunwon-e/sub.css" media="all">
-		
-		<!-- 레이아웃 커스텀 CSS -->
-		<link rel="stylesheet" href="/css/web/bunwon-e/layout_cnt.css" media="all">
-		<!-- //css -->
-		
-		<!-- js -->
-		<script src="/00_common/js/jquery.min.js"></script>
-		<script src="/00_common/js/slick.min.js"></script>
-		<script src="/00_common/js/common.js"></script>
-		<script src="/00_common/js/con_com.js"></script>
-		<!-- //js -->
-
-		<!-- 추가  -->
-		<script type="text/javascript" src="/js/jquery-ui.min.js"></script> <!-- datePicker js -->
-		<script type="text/javascript" src="/js/jquery.form.js"></script> <!-- ajax -->
-	    <link href="/00_common/css/ntt.css" rel="stylesheet"> <!-- 게시판 -->
-	    <!-- //추가  -->
-	    
-	    <!-- 레이아웃 js -->
-	    <script src="/js/template/T0013/sub.js"></script>
-	    
-	    <!-- 개발자 추가 -->		
-	    <script type="text/javascript" src="/js/co/js_developer.js"></script><!-- 개발자 js -->
-	    <!-- //개발자 추가 -->
-	</head>
-	<body>
-		<!-- 바로가기 -->
-		<div id="skipArea">
-			<a href="#container">본문으로 바로가기</a><a href="#gnb">메인메뉴 바로가기</a>
-		</div>
-		<!-- //바로가기 -->
-		<div id="wrap"> <!--[D] 팝업이 있을때 #wrap에 클래스 openPop 추가-->
-			<!-- 헤더-->
-			
-
-
-
-
-
-	
-	
-	
-			<header id="header">
-				<!-- web -->
-				<div id="web">
-					<div class="top container">
-						<h1>
-							<a href="/bunwon-e/main.do">
-								<!--LST-->
-						<img src="/upload/bunwon-e/logo/img_0a31c57e-e45f-4a7c-bb47-a6b8cc6aec981669083770830.png" alt="분원초등학교">
-								<!--LED-->
-							</a>
-						</h1>
-						<ul class="top_menu">
-							
-							
-
-
-
-
-
-
-
-
-
-
-
-
-
-							<!-- 국공유 디비 처리 -->
-							
-							
-							
-							<!-- //국공유 디비 END -->	
-									
-							<!-- [담당자알림] sysId가 교육지원청, 샘플페이지 일경우에만 처리 -->
-							
-							<li><a href="/bunwon-e/main.do">홈</a></li>
-							
-							
-								
-									
-										
-										
-											<li><a href="/bunwon-e/lo/login/loginTotalPage.do"  title="로그인">로그인</a></li>
-										
-									
-										
-											
-												
-												
-													<li><a href="https://www.goegh.kr/bunwon-e/sb/sbscrb/insertSbscrbInfo01.do?sbscrbCtx=bunwon-e" id="insertSbscrb" title="회원가입">회원가입</a></li>
-												
-												
-											
-										
-								
-								
-							
-							
-							<li><a href="/bunwon-e/sitemap.do">사이트맵</a></li>
-							
-								
-							
-							
-
-						</ul>
-						<div class="box_search_0">
-							<form name="searchForm" id="searchForm" method="POST" target="_blank">
-								<input type="text" placeholder="검색어를 입력해주세요" name="qt" id="total_search" title="검색어를 입력해주세요">
-<input type="hidden" id="sysId" name="sysId" value="bunwon-e">								<button type="button" onClick="javascript:goSearchForm();"><i class="xi-search" aria-hidden="true"></i></button>
-							</form>
-						</div>
-					</div>
-
-					<!-- NAV : fullDown / oneDown / oneFull -->
-					<div id="nav" class="oneDown">
-						<div id="blind"></div>
-						<div id="gnb">
-							<!--  depWidth : 1차 depth width 자동계산-->
-							<!--START-->
-							
-							<div class="depth01 depWidth">
-								<ul>
-									<li><a href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2135&cntntsId=1448"  ><span>학교소개 </span></a>
-										<div class="depth02">
-										<ul>
-											<li><a href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2135&cntntsId=1448"  ><span>학교장인사말</span></a></li>
-											<li><a href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2139&cntntsId=441"  ><span>학교경영상</span></a></li>
-											<li><a href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2141&cntntsId=1449"  ><span>학교연혁</span></a></li>
-											<li><a href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2144&cntntsId=442"  ><span>학교현황</span></a></li>
-											<li><a href="/bunwon-e/lm/location/locationMapView.do?mi=2146"  ><span>오시는길</span></a></li>
-											<li><a href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2149&cntntsId=1450"  ><span>교가</span></a></li>
-											<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=10443&bbsId=6195"  ><span>학교홍보보도자료</span></a></li>
-											<li><a href="https://www.schoolinfo.go.kr/index.jsp?GS_CD=S090001302"   rel="noopener noreferrer" target="_blank" title="새창열림" ><span>학교알리미</span></a></li>
-										</ul>
-										</div>
-									</li>
-									<li><a href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2158&cntntsId=447"  ><span>추구하는 교육</span></a>
-										<div class="depth02">
-										<ul>
-											<li><a href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2158&cntntsId=447"  ><span>학교비전 및 목표</span></a></li>
-											<li><a href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2162&cntntsId=448"  ><span>특색 교육 활동</span></a></li>
-										</ul>
-										</div>
-									</li>
-									<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2172&bbsId=1229"  ><span>학교재정공개</span></a>
-										<div class="depth02">
-										<ul>
-											<li><a id="2167" href="#?mi=2167"  ><span>예결산현황</span></a>
-												<div class="depth03">
-												<ul>
-													<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2172&bbsId=1229"  ><span>예결산현황</span></a></li>
-													<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2178&bbsId=1233"  ><span>예산서</span></a></li>
-													<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2181&bbsId=1235"  ><span>결산서</span></a></li>
-												</ul>
-												</div>
-											</li>
-											<li><a id="2188" href="#?mi=2188"  ><span>업무추진비 집행내역</span></a>
-												<div class="depth03">
-												<ul>
-													<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2192&bbsId=1238"  ><span>업무추진비 집행내역</span></a></li>
-													<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2196&bbsId=1241"  ><span>신용카드 사용내역</span></a></li>
-												</ul>
-												</div>
-											</li>
-											<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2200&bbsId=1243"  ><span>상품권구매사용내역</span></a></li>
-											<li><a id="2206" href="#?mi=2206"  ><span>물품및공사계약</span></a>
-												<div class="depth03">
-												<ul>
-													<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2209&bbsId=1248"  ><span>수의계약내역</span></a></li>
-													<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2213&bbsId=1251"  ><span>입찰공고</span></a></li>
-													<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2218&bbsId=1253"  ><span>입찰결과</span></a></li>
-												</ul>
-												</div>
-											</li>
-											<li><a id="2223" href="#?mi=2223"  ><span>수익자부담경비집행내역</span></a>
-												<div class="depth03">
-												<ul>
-													<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2228&bbsId=1257"  ><span>수학여행</span></a></li>
-													<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2232&bbsId=1260"  ><span>체험학습</span></a></li>
-													<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2237&bbsId=1264"  ><span>수련회선정</span></a></li>
-												</ul>
-												</div>
-											</li>
-											<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2242&bbsId=1269"  ><span>감사결과</span></a></li>
-											<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2248&bbsId=1273"  ><span>기타</span></a></li>
-										</ul>
-										</div>
-									</li>
-									<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=9599&bbsId=1352"  ><span>유치원</span></a>
-										<div class="depth02">
-										<ul>
-											<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=9599&bbsId=1352"  ><span>공지사항</span></a></li>
-											<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=9600&bbsId=1356"  ><span>유치원 평가 결과</span></a></li>
-										</ul>
-										</div>
-									</li>
-									<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2406&bbsId=1387"  ><span>분원커뮤니티</span></a>
-										<div class="depth02">
-										<ul>
-											<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2406&bbsId=1387"  ><span>교육과정 사진자료실</span></a></li>
-											<li><a id="2417" href="#?mi=2417"  ><span>학생자치방</span></a>
-												<div class="depth03">
-												<ul>
-													<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2421&bbsId=1400"  ><span>제안마당</span></a></li>
-													<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2439&bbsId=1413"  ><span>우리학교 이렇게</span></a></li>
-													<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2446&bbsId=1417"  ><span>우리는 칭찬왕</span></a></li>
-													<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2466&bbsId=1432"  ><span>우리들 모습</span></a></li>
-												</ul>
-												</div>
-											</li>
-											<li><a id="2475" href="#?mi=2475"  ><span>학부모자치방</span></a>
-												<div class="depth03">
-												<ul>
-													<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2508&bbsId=1452"  ><span>학부모자치방</span></a></li>
-													<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2518&bbsId=1455"  ><span>학부모 활동사진</span></a></li>
-													<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=10400&bbsId=6175"  ><span>학부모자료실</span></a></li>
-												</ul>
-												</div>
-											</li>
-											<li><a id="2522" href="#?mi=2522"  ><span>도서실</span></a>
-												<div class="depth03">
-												<ul>
-													<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2532&bbsId=1462"  ><span>도서신청</span></a></li>
-													<li><a href="https://read365.edunet.net/"   rel="noopener noreferrer" target="_blank" title="새창열림" ><span>디지털자료실</span></a></li>
-												</ul>
-												</div>
-											</li>
-										</ul>
-										</div>
-									</li>
-									<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2544&bbsId=1468"  ><span>알림마당 </span></a>
-										<div class="depth02">
-										<ul>
-											<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2544&bbsId=1468"  ><span>공지사항</span></a></li>
-											<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2545&bbsId=1469"  ><span>가정통신문</span></a></li>
-											<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=9983&bbsId=5957"  ><span>가정통신문(교육청)</span></a></li>
-											<li><a href="/bunwon-e/ps/schdul/selectSchdulMainList.do?mi=2547"  ><span>학교일정</span></a></li>
-											<li><a id="2550" href="#?mi=2550"  ><span>늘봄학교</span></a>
-												<div class="depth03">
-												<ul>
-													<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2554&bbsId=1474"  ><span>아침늘봄</span></a></li>
-													<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2558&bbsId=1474"  ><span>선택형교육(방과후학교) 자료실</span></a></li>
-													<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=10518&bbsId=6227"  ><span>돌봄 자료실</span></a></li>
-												</ul>
-												</div>
-											</li>
-											<li><a id="2566" href="#?mi=2566"  ><span>학교운영위원회 </span></a>
-												<div class="depth03">
-												<ul>
-													<li><a href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2590&cntntsId=511"  ><span>운영위원회소개</span></a></li>
-													<li><a href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2592&cntntsId=513"  ><span>운영위원회 운영 규정</span></a></li>
-													<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2593&bbsId=1487"  ><span>게시판</span></a></li>
-												</ul>
-												</div>
-											</li>
-											<li><a id="2607" href="#?mi=2607"  ><span>학부모회 </span></a>
-												<div class="depth03">
-												<ul>
-													<li><a href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2614&cntntsId=514"  ><span>학부모회</span></a></li>
-													<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2617&bbsId=1501"  ><span>학부모자유게시판</span></a></li>
-												</ul>
-												</div>
-											</li>
-											<li><a id="2623" href="#?mi=2623"  ><span>행정정보공개</span></a>
-												<div class="depth03">
-												<ul>
-													<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2634&bbsId=1511"  ><span>사전정보공표</span></a></li>
-													<li><a href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2636&cntntsId=519"  ><span>비공개대상정보세부기준</span></a></li>
-													<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2638&bbsId=1513"  ><span>정보공개자료실</span></a></li>
-													<li><a href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2641&cntntsId=521"  ><span>정보공개제도안내</span></a></li>
-												</ul>
-												</div>
-											</li>
-											<li><a id="2652" href="#?mi=2652"  ><span>시설개방민원창구</span></a>
-												<div class="depth03">
-												<ul>
-													<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2655&bbsId=1518"  ><span>시설개방민원창구</span></a></li>
-													<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2657&bbsId=1520"  ><span>학교 시설 개방 민원창구</span></a></li>
-													<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2660&bbsId=1523"  ><span>이용수칙</span></a></li>
-													<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2665&bbsId=1527"  ><span>사용료 징수</span></a></li>
-													<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2672&bbsId=1531"  ><span>민원상담</span></a></li>
-												</ul>
-												</div>
-											</li>
-											<li><a href="/bunwon-e/qr/qrspns/selectQrspnsList.do?mi=2678"  ><span>설문조사</span></a></li>
-											<li><a id="2682" href="#?mi=2682"  ><span>학교급식</span></a>
-												<div class="depth03">
-												<ul>
-													<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=10036&bbsId=6010"  ><span>급식영양소식</span></a></li>
-													<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=10037&bbsId=6011"  ><span>급식영양상담</span></a></li>
-												</ul>
-												</div>
-											</li>
-											<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2687&bbsId=1537"  ><span>보건정보</span></a></li>
-											<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2689&bbsId=1538"  ><span>혁신학교운영</span></a></li>
-										</ul>
-										</div>
-									</li>
-									<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2693&bbsId=1540"  ><span>학교평가</span></a></li>
-									<li><a href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2699&cntntsId=528"  ><span>전자민원창구</span></a>
-										<div class="depth02">
-										<ul>
-											<li><a href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2699&cntntsId=528"  ><span>민원안내</span></a></li>
-											<li><a href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2704&cntntsId=529"  ><span>홈에듀민원서비스</span></a></li>
-											<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2708&bbsId=1547"  ><span>묻고답하기</span></a></li>
-											<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2712&bbsId=1549"  ><span>민원신청</span></a></li>
-										</ul>
-										</div>
-									</li>
-									<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2723&bbsId=1556"  ><span>교직원마당</span></a>
-										<div class="depth02">
-										<ul>
-											<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2723&bbsId=1556"  ><span>업무자료실</span></a></li>
-											<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2724&bbsId=1557"  ><span>교수/학습자료실</span></a></li>
-											<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2727&bbsId=1559"  ><span>연수자료실</span></a></li>
-											<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2729&bbsId=1560"  ><span>회의록</span></a></li>
-											<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2732&bbsId=1562"  ><span>행정실</span></a></li>
-										</ul>
-										</div>
-									</li>
-								</ul>
-							</div>
-							<!--END-->
-						</div>
-					</div>
-					<!-- //NAV : fullDown / oneDown / oneFull -->
-				</div>
-				<!-- tablet, moblie -->
-				<div id="tablet">
-					<div id="tabletHeader">
-						<div id="tabletLogo">
-							<a href="/bunwon-e/main.do">
-								<!--LST-->
-						<img src="/upload/bunwon-e/logo/img_0a31c57e-e45f-4a7c-bb47-a6b8cc6aec981669083770830.png" alt="분원초등학교">
-								<!--LED-->
-							</a>
-						</div>
-					</div>
-					<div id="tabletGnb">
-						<div id="menuOpen"><a href="#"><i class="xi-bars" arai-hidden="true"></i><span class="hid">모바일메뉴 열기</span></a></div>
-					</div>
-					<!-- 태블릿 검색 -->
-					<div id="tabletSearch">
-						<div id="searchOpen"><a href="#"><i class="xi-search" arai-hidden="true"></i><span class="hid">검색열기</span></a></div>
-					</div>
-					<div id="mSearch">
-						<form name="searchFrm" id="searchFrm" method="POST">
-							<div class="con">
-								<p>
-									<input type="text" id="mTotal_search" name="searchText" class="inputText" title="통합 검색어">
-									<button type="button" class="btnSearch" onClick="javascript:goMSearchForm();"><i class="xi-search" aria-hidden="true"></i></button>
-								</p>
-								<button type="button" class="btnSearchClose"><i class="xi-close"></i><span class="hid">모바일 통합검색 닫기</span></button>
-							</div>
-						</form>
-					</div>
-					<!-- 태블릿 검색 -->
-					<div id="mNavi">
-						<div id="mtitle"><a href="#">메뉴닫기</a></div>
-						<nav id="mgnb">
-							<div class="snb">
-								<ul>
-									
-									
-
-
-
-
-
-
-
-
-
-									<!-- 국공유 디비 처리 -->
-									
-									<!-- //국공유 디비 END -->		
-									
-									<!-- [담당자알림] sysId가 교육지원청, 샘플페이지 일경우에만 처리 -->
-									
-									<li><a href="/bunwon-e/main.do">홈</a></li>
-									
-										
-											
-												
-												
-													<li><a href="/bunwon-e/lo/login/loginTotalPage.do"  title="로그인">로그인</a></li>
-												
-											
-											
-												
-													<li><a href="https://www.goegh.kr/bunwon-e/sb/sbscrb/insertSbscrbInfo01.do?sbscrbCtx=bunwon-e" id="insertSbscrb2" title="회원가입">회원가입</a></li>
-												
-												
-											
-										
-										
-									
-									
-									<li><a href="/bunwon-e/sitemap.do">사이트맵</a></li>
-									
-									
-
-								</ul>
-							</div>
-							<!--M_START-->
-					<ul>
-						<li><a class='dep' href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2135&cntntsId=1448"  >학교소개 </a>
-							<ul>
-								<li><a class='dep2' href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2135&cntntsId=1448"  >학교장인사말</a></li>
-								<li><a class='dep2' href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2139&cntntsId=441"  >학교경영상</a></li>
-								<li><a class='dep2' href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2141&cntntsId=1449"  >학교연혁</a></li>
-								<li><a class='dep2' href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2144&cntntsId=442"  >학교현황</a></li>
-								<li><a class='dep2' href="/bunwon-e/lm/location/locationMapView.do?mi=2146"  >오시는길</a></li>
-								<li><a class='dep2' href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2149&cntntsId=1450"  >교가</a></li>
-								<li><a class='dep2' href="/bunwon-e/na/ntt/selectNttList.do?mi=10443&bbsId=6195"  >학교홍보보도자료</a></li>
-								<li><a class='dep2' href="https://www.schoolinfo.go.kr/index.jsp?GS_CD=S090001302"   rel="noopener noreferrer" target="_blank" title="새창열림" >학교알리미</a></li>
-							</ul>
-						</li>
-						<li><a class='dep' href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2158&cntntsId=447"  >추구하는 교육</a>
-							<ul>
-								<li><a class='dep2' href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2158&cntntsId=447"  >학교비전 및 목표</a></li>
-								<li><a class='dep2' href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2162&cntntsId=448"  >특색 교육 활동</a></li>
-							</ul>
-						</li>
-						<li><a class='dep' href="/bunwon-e/na/ntt/selectNttList.do?mi=2172&bbsId=1229"  >학교재정공개</a>
-							<ul>
-								<li><a class='dep2' href="/bunwon-e/na/ntt/selectNttList.do?mi=2172&bbsId=1229"  >예결산현황</a>
-									<ul>
-										<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2172&bbsId=1229"  >예결산현황</a></li>
-										<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2178&bbsId=1233"  >예산서</a></li>
-										<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2181&bbsId=1235"  >결산서</a></li>
-									</ul>
-								</li>
-								<li><a class='dep2' href="/bunwon-e/na/ntt/selectNttList.do?mi=2192&bbsId=1238"  >업무추진비 집행내역</a>
-									<ul>
-										<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2192&bbsId=1238"  >업무추진비 집행내역</a></li>
-										<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2196&bbsId=1241"  >신용카드 사용내역</a></li>
-									</ul>
-								</li>
-								<li><a class='dep2' href="/bunwon-e/na/ntt/selectNttList.do?mi=2200&bbsId=1243"  >상품권구매사용내역</a></li>
-								<li><a class='dep2' href="/bunwon-e/na/ntt/selectNttList.do?mi=2209&bbsId=1248"  >물품및공사계약</a>
-									<ul>
-										<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2209&bbsId=1248"  >수의계약내역</a></li>
-										<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2213&bbsId=1251"  >입찰공고</a></li>
-										<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2218&bbsId=1253"  >입찰결과</a></li>
-									</ul>
-								</li>
-								<li><a class='dep2' href="/bunwon-e/na/ntt/selectNttList.do?mi=2228&bbsId=1257"  >수익자부담경비집행내역</a>
-									<ul>
-										<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2228&bbsId=1257"  >수학여행</a></li>
-										<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2232&bbsId=1260"  >체험학습</a></li>
-										<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2237&bbsId=1264"  >수련회선정</a></li>
-									</ul>
-								</li>
-								<li><a class='dep2' href="/bunwon-e/na/ntt/selectNttList.do?mi=2242&bbsId=1269"  >감사결과</a></li>
-								<li><a class='dep2' href="/bunwon-e/na/ntt/selectNttList.do?mi=2248&bbsId=1273"  >기타</a></li>
-							</ul>
-						</li>
-						<li><a class='dep' href="/bunwon-e/na/ntt/selectNttList.do?mi=9599&bbsId=1352"  >유치원</a>
-							<ul>
-								<li><a class='dep2' href="/bunwon-e/na/ntt/selectNttList.do?mi=9599&bbsId=1352"  >공지사항</a></li>
-								<li><a class='dep2' href="/bunwon-e/na/ntt/selectNttList.do?mi=9600&bbsId=1356"  >유치원 평가 결과</a></li>
-							</ul>
-						</li>
-						<li><a class='dep' href="/bunwon-e/na/ntt/selectNttList.do?mi=2406&bbsId=1387"  >분원커뮤니티</a>
-							<ul>
-								<li><a class='dep2' href="/bunwon-e/na/ntt/selectNttList.do?mi=2406&bbsId=1387"  >교육과정 사진자료실</a></li>
-								<li><a class='dep2' href="/bunwon-e/na/ntt/selectNttList.do?mi=2421&bbsId=1400"  >학생자치방</a>
-									<ul>
-										<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2421&bbsId=1400"  >제안마당</a></li>
-										<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2439&bbsId=1413"  >우리학교 이렇게</a></li>
-										<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2446&bbsId=1417"  >우리는 칭찬왕</a></li>
-										<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2466&bbsId=1432"  >우리들 모습</a></li>
-									</ul>
-								</li>
-								<li><a class='dep2' href="/bunwon-e/na/ntt/selectNttList.do?mi=2508&bbsId=1452"  >학부모자치방</a>
-									<ul>
-										<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2508&bbsId=1452"  >학부모자치방</a></li>
-										<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2518&bbsId=1455"  >학부모 활동사진</a></li>
-										<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=10400&bbsId=6175"  >학부모자료실</a></li>
-									</ul>
-								</li>
-								<li><a class='dep2' href="/bunwon-e/na/ntt/selectNttList.do?mi=2532&bbsId=1462"  >도서실</a>
-									<ul>
-										<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2532&bbsId=1462"  >도서신청</a></li>
-										<li><a href="https://read365.edunet.net/"   rel="noopener noreferrer" target="_blank" title="새창열림" >디지털자료실</a></li>
-									</ul>
-								</li>
-							</ul>
-						</li>
-						<li><a class='dep' href="/bunwon-e/na/ntt/selectNttList.do?mi=2544&bbsId=1468"  >알림마당 </a>
-							<ul>
-								<li><a class='dep2' href="/bunwon-e/na/ntt/selectNttList.do?mi=2544&bbsId=1468"  >공지사항</a></li>
-								<li><a class='dep2' href="/bunwon-e/na/ntt/selectNttList.do?mi=2545&bbsId=1469"  >가정통신문</a></li>
-								<li><a class='dep2' href="/bunwon-e/na/ntt/selectNttList.do?mi=9983&bbsId=5957"  >가정통신문(교육청)</a></li>
-								<li><a class='dep2' href="/bunwon-e/ps/schdul/selectSchdulMainList.do?mi=2547"  >학교일정</a></li>
-								<li><a class='dep2' href="/bunwon-e/na/ntt/selectNttList.do?mi=2554&bbsId=1474"  >늘봄학교</a>
-									<ul>
-										<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2554&bbsId=1474"  >아침늘봄</a></li>
-										<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2558&bbsId=1474"  >선택형교육(방과후학교) 자료실</a></li>
-										<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=10518&bbsId=6227"  >돌봄 자료실</a></li>
-									</ul>
-								</li>
-								<li><a class='dep2' href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2590&cntntsId=511"  >학교운영위원회 </a>
-									<ul>
-										<li><a href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2590&cntntsId=511"  >운영위원회소개</a></li>
-										<li><a href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2592&cntntsId=513"  >운영위원회 운영 규정</a></li>
-										<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2593&bbsId=1487"  >게시판</a></li>
-									</ul>
-								</li>
-								<li><a class='dep2' href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2614&cntntsId=514"  >학부모회 </a>
-									<ul>
-										<li><a href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2614&cntntsId=514"  >학부모회</a></li>
-										<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2617&bbsId=1501"  >학부모자유게시판</a></li>
-									</ul>
-								</li>
-								<li><a class='dep2' href="/bunwon-e/na/ntt/selectNttList.do?mi=2634&bbsId=1511"  >행정정보공개</a>
-									<ul>
-										<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2634&bbsId=1511"  >사전정보공표</a></li>
-										<li><a href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2636&cntntsId=519"  >비공개대상정보세부기준</a></li>
-										<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2638&bbsId=1513"  >정보공개자료실</a></li>
-										<li><a href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2641&cntntsId=521"  >정보공개제도안내</a></li>
-									</ul>
-								</li>
-								<li><a class='dep2' href="/bunwon-e/na/ntt/selectNttList.do?mi=2655&bbsId=1518"  >시설개방민원창구</a>
-									<ul>
-										<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2655&bbsId=1518"  >시설개방민원창구</a></li>
-										<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2657&bbsId=1520"  >학교 시설 개방 민원창구</a></li>
-										<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2660&bbsId=1523"  >이용수칙</a></li>
-										<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2665&bbsId=1527"  >사용료 징수</a></li>
-										<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=2672&bbsId=1531"  >민원상담</a></li>
-									</ul>
-								</li>
-								<li><a class='dep2' href="/bunwon-e/qr/qrspns/selectQrspnsList.do?mi=2678"  >설문조사</a></li>
-								<li><a class='dep2' href="/bunwon-e/ad/fm/foodmenu/selectFoodMenuView.do?mi=2682"  >학교급식</a>
-									<ul>
-										<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=10036&bbsId=6010"  >급식영양소식</a></li>
-										<li><a href="/bunwon-e/na/ntt/selectNttList.do?mi=10037&bbsId=6011"  >급식영양상담</a></li>
-									</ul>
-								</li>
-								<li><a class='dep2' href="/bunwon-e/na/ntt/selectNttList.do?mi=2687&bbsId=1537"  >보건정보</a></li>
-								<li><a class='dep2' href="/bunwon-e/na/ntt/selectNttList.do?mi=2689&bbsId=1538"  >혁신학교운영</a></li>
-							</ul>
-						</li>
-						<li><a class='dep' href="/bunwon-e/na/ntt/selectNttList.do?mi=2693&bbsId=1540"  >학교평가</a></li>
-						<li><a class='dep' href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2699&cntntsId=528"  >전자민원창구</a>
-							<ul>
-								<li><a class='dep2' href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2699&cntntsId=528"  >민원안내</a></li>
-								<li><a class='dep2' href="/bunwon-e/cm/cntnts/cntntsView.do?mi=2704&cntntsId=529"  >홈에듀민원서비스</a></li>
-								<li><a class='dep2' href="/bunwon-e/na/ntt/selectNttList.do?mi=2708&bbsId=1547"  >묻고답하기</a></li>
-								<li><a class='dep2' href="/bunwon-e/na/ntt/selectNttList.do?mi=2712&bbsId=1549"  >민원신청</a></li>
-							</ul>
-						</li>
-						<li><a class='dep' href="/bunwon-e/na/ntt/selectNttList.do?mi=2723&bbsId=1556"  >교직원마당</a>
-							<ul>
-								<li><a class='dep2' href="/bunwon-e/na/ntt/selectNttList.do?mi=2723&bbsId=1556"  >업무자료실</a></li>
-								<li><a class='dep2' href="/bunwon-e/na/ntt/selectNttList.do?mi=2724&bbsId=1557"  >교수/학습자료실</a></li>
-								<li><a class='dep2' href="/bunwon-e/na/ntt/selectNttList.do?mi=2727&bbsId=1559"  >연수자료실</a></li>
-								<li><a class='dep2' href="/bunwon-e/na/ntt/selectNttList.do?mi=2729&bbsId=1560"  >회의록</a></li>
-								<li><a class='dep2' href="/bunwon-e/na/ntt/selectNttList.do?mi=2732&bbsId=1562"  >행정실</a></li>
-							</ul>
-						</li>
-					</ul>
-							<!--M_END-->
-						</nav>
-					</div>
-				</div>
-				<!-- //tablet -->
-				
-			</header>
-
-
-			<!-- //헤더 -->
-				
-			<!-- 컨테이너 -->
-			<div id="sub_container">
-				<!-- 서브 비주얼 -->
-				<div class="subvisual">
-					<!--subImgStart-->
-								<img src='null' alt='null'>
-					<!--subImgEnd-->
-				</div>
-				<!-- //서브 비주얼 -->
-				
-				<div class="subCntBody">
-					<!-- 서브메뉴 -->
-					
-
-
-							<aside id="snb">
-								<div class="snb_wrap">
-									<a href="/bunwon-e/main.do" class="home"><em class="hid">HOME</em></a>
-									<!--START-->
-						
-						<input type="hidden" id="leftCurrMi" value="2547">
-						<input type="hidden" id="tabBaseMi" value="2547">
-						<input type="hidden" id="tabUpperMi" value="">
-
-						<ul class='dep01'>
-							<li id='currMenuId2113'>
-								<a href='/bunwon-e/cm/cntnts/cntntsView.do?mi=2135&cntntsId=1448'  >학교소개 </a>
-								<ul class='dep02'>
-									<li id='currMenuId2135'><a href='/bunwon-e/cm/cntnts/cntntsView.do?mi=2135&cntntsId=1448'  ><span>학교장인사말</span></a></li>
-									<li id='currMenuId2139'><a href='/bunwon-e/cm/cntnts/cntntsView.do?mi=2139&cntntsId=441'  ><span>학교경영상</span></a></li>
-									<li id='currMenuId2141'><a href='/bunwon-e/cm/cntnts/cntntsView.do?mi=2141&cntntsId=1449'  ><span>학교연혁</span></a></li>
-									<li id='currMenuId2144'><a href='/bunwon-e/cm/cntnts/cntntsView.do?mi=2144&cntntsId=442'  ><span>학교현황</span></a></li>
-									<li id='currMenuId2146'><a href='/bunwon-e/lm/location/locationMapView.do?mi=2146'  ><span>오시는길</span></a></li>
-									<li id='currMenuId2149'><a href='/bunwon-e/cm/cntnts/cntntsView.do?mi=2149&cntntsId=1450'  ><span>교가</span></a></li>
-									<li id='currMenuId10443'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=10443&bbsId=6195'  ><span>학교홍보보도자료</span></a></li>
-									<li id='currMenuId9847'><a href='https://www.schoolinfo.go.kr/index.jsp?GS_CD=S090001302'   rel="noopener noreferrer" target="_blank" title="새창열림" ><span>학교알리미</span></a></li>
-								</ul>
-							</li>
-							<li id='currMenuId2155'>
-								<a href='/bunwon-e/cm/cntnts/cntntsView.do?mi=2158&cntntsId=447'  >추구하는 교육</a>
-								<ul class='dep02'>
-									<li id='currMenuId2158'><a href='/bunwon-e/cm/cntnts/cntntsView.do?mi=2158&cntntsId=447'  ><span>학교비전 및 목표</span></a></li>
-									<li id='currMenuId2162'><a href='/bunwon-e/cm/cntnts/cntntsView.do?mi=2162&cntntsId=448'  ><span>특색 교육 활동</span></a></li>
-								</ul>
-							</li>
-							<li id='currMenuId2164'>
-								<a href='/bunwon-e/na/ntt/selectNttList.do?mi=2172&bbsId=1229'  >학교재정공개</a>
-								<ul class='dep02'>
-									<li id='currMenuId2167'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2172&bbsId=1229'  ><span>예결산현황</span></a>
-										<ul class="dep03">
-											<li id='currMenuId2172'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2172&bbsId=1229'  ><span>예결산현황</span></a></li>
-											<li id='currMenuId2178'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2178&bbsId=1233'  ><span>예산서</span></a></li>
-											<li id='currMenuId2181'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2181&bbsId=1235'  ><span>결산서</span></a></li>
-										</ul>
-									</li>
-									<li id='currMenuId2188'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2192&bbsId=1238'  ><span>업무추진비 집행내역</span></a>
-										<ul class="dep03">
-											<li id='currMenuId2192'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2192&bbsId=1238'  ><span>업무추진비 집행내역</span></a></li>
-											<li id='currMenuId2196'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2196&bbsId=1241'  ><span>신용카드 사용내역</span></a></li>
-										</ul>
-									</li>
-									<li id='currMenuId2200'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2200&bbsId=1243'  ><span>상품권구매사용내역</span></a></li>
-									<li id='currMenuId2206'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2209&bbsId=1248'  ><span>물품및공사계약</span></a>
-										<ul class="dep03">
-											<li id='currMenuId2209'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2209&bbsId=1248'  ><span>수의계약내역</span></a></li>
-											<li id='currMenuId2213'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2213&bbsId=1251'  ><span>입찰공고</span></a></li>
-											<li id='currMenuId2218'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2218&bbsId=1253'  ><span>입찰결과</span></a></li>
-										</ul>
-									</li>
-									<li id='currMenuId2223'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2228&bbsId=1257'  ><span>수익자부담경비집행내역</span></a>
-										<ul class="dep03">
-											<li id='currMenuId2228'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2228&bbsId=1257'  ><span>수학여행</span></a></li>
-											<li id='currMenuId2232'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2232&bbsId=1260'  ><span>체험학습</span></a></li>
-											<li id='currMenuId2237'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2237&bbsId=1264'  ><span>수련회선정</span></a></li>
-										</ul>
-									</li>
-									<li id='currMenuId2242'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2242&bbsId=1269'  ><span>감사결과</span></a></li>
-									<li id='currMenuId2248'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2248&bbsId=1273'  ><span>기타</span></a></li>
-								</ul>
-							</li>
-							<li id='currMenuId2255'>
-								<a href='/bunwon-e/na/ntt/selectNttList.do?mi=9599&bbsId=1352'  >유치원</a>
-								<ul class='dep02'>
-									<li id='currMenuId9599'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=9599&bbsId=1352'  ><span>공지사항</span></a></li>
-									<li id='currMenuId9600'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=9600&bbsId=1356'  ><span>유치원 평가 결과</span></a></li>
-								</ul>
-							</li>
-							<li id='currMenuId2391'>
-								<a href='/bunwon-e/na/ntt/selectNttList.do?mi=2406&bbsId=1387'  >분원커뮤니티</a>
-								<ul class='dep02'>
-									<li id='currMenuId2406'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2406&bbsId=1387'  ><span>교육과정 사진자료실</span></a></li>
-									<li id='currMenuId2417'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2421&bbsId=1400'  ><span>학생자치방</span></a>
-										<ul class="dep03">
-											<li id='currMenuId2421'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2421&bbsId=1400'  ><span>제안마당</span></a></li>
-											<li id='currMenuId2439'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2439&bbsId=1413'  ><span>우리학교 이렇게</span></a></li>
-											<li id='currMenuId2446'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2446&bbsId=1417'  ><span>우리는 칭찬왕</span></a></li>
-											<li id='currMenuId2466'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2466&bbsId=1432'  ><span>우리들 모습</span></a></li>
-										</ul>
-									</li>
-									<li id='currMenuId2475'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2508&bbsId=1452'  ><span>학부모자치방</span></a>
-										<ul class="dep03">
-											<li id='currMenuId2508'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2508&bbsId=1452'  ><span>학부모자치방</span></a></li>
-											<li id='currMenuId2518'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2518&bbsId=1455'  ><span>학부모 활동사진</span></a></li>
-											<li id='currMenuId10400'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=10400&bbsId=6175'  ><span>학부모자료실</span></a></li>
-										</ul>
-									</li>
-									<li id='currMenuId2522'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2532&bbsId=1462'  ><span>도서실</span></a>
-										<ul class="dep03">
-											<li id='currMenuId2532'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2532&bbsId=1462'  ><span>도서신청</span></a></li>
-											<li id='currMenuId2535'><a href='https://read365.edunet.net/'   rel="noopener noreferrer" target="_blank" title="새창열림" ><span>디지털자료실</span></a></li>
-										</ul>
-									</li>
-								</ul>
-							</li>
-							<li id='currMenuId2542'>
-								<a href='/bunwon-e/na/ntt/selectNttList.do?mi=2544&bbsId=1468'  >알림마당 </a>
-								<ul class='dep02'>
-									<li id='currMenuId2544'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2544&bbsId=1468'  ><span>공지사항</span></a></li>
-									<li id='currMenuId2545'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2545&bbsId=1469'  ><span>가정통신문</span></a></li>
-									<li id='currMenuId9983'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=9983&bbsId=5957'  ><span>가정통신문(교육청)</span></a></li>
-									<li id='currMenuId2547'><a href='/bunwon-e/ps/schdul/selectSchdulMainList.do?mi=2547'  ><span>학교일정</span></a></li>
-									<li id='currMenuId2550'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2554&bbsId=1474'  ><span>늘봄학교</span></a>
-										<ul class="dep03">
-											<li id='currMenuId2554'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2554&bbsId=1474'  ><span>아침늘봄</span></a></li>
-											<li id='currMenuId2558'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2558&bbsId=1474'  ><span>선택형교육(방과후학교) 자료실</span></a></li>
-											<li id='currMenuId10518'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=10518&bbsId=6227'  ><span>돌봄 자료실</span></a></li>
-										</ul>
-									</li>
-									<li id='currMenuId2566'><a href='/bunwon-e/cm/cntnts/cntntsView.do?mi=2590&cntntsId=511'  ><span>학교운영위원회 </span></a>
-										<ul class="dep03">
-											<li id='currMenuId2590'><a href='/bunwon-e/cm/cntnts/cntntsView.do?mi=2590&cntntsId=511'  ><span>운영위원회소개</span></a></li>
-											<li id='currMenuId2592'><a href='/bunwon-e/cm/cntnts/cntntsView.do?mi=2592&cntntsId=513'  ><span>운영위원회 운영 규정</span></a></li>
-											<li id='currMenuId2593'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2593&bbsId=1487'  ><span>게시판</span></a></li>
-										</ul>
-									</li>
-									<li id='currMenuId2607'><a href='/bunwon-e/cm/cntnts/cntntsView.do?mi=2614&cntntsId=514'  ><span>학부모회 </span></a>
-										<ul class="dep03">
-											<li id='currMenuId2614'><a href='/bunwon-e/cm/cntnts/cntntsView.do?mi=2614&cntntsId=514'  ><span>학부모회</span></a></li>
-											<li id='currMenuId2617'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2617&bbsId=1501'  ><span>학부모자유게시판</span></a></li>
-										</ul>
-									</li>
-									<li id='currMenuId2623'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2634&bbsId=1511'  ><span>행정정보공개</span></a>
-										<ul class="dep03">
-											<li id='currMenuId2634'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2634&bbsId=1511'  ><span>사전정보공표</span></a></li>
-											<li id='currMenuId2636'><a href='/bunwon-e/cm/cntnts/cntntsView.do?mi=2636&cntntsId=519'  ><span>비공개대상정보세부기준</span></a></li>
-											<li id='currMenuId2638'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2638&bbsId=1513'  ><span>정보공개자료실</span></a></li>
-											<li id='currMenuId2641'><a href='/bunwon-e/cm/cntnts/cntntsView.do?mi=2641&cntntsId=521'  ><span>정보공개제도안내</span></a></li>
-										</ul>
-									</li>
-									<li id='currMenuId2652'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2655&bbsId=1518'  ><span>시설개방민원창구</span></a>
-										<ul class="dep03">
-											<li id='currMenuId2655'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2655&bbsId=1518'  ><span>시설개방민원창구</span></a></li>
-											<li id='currMenuId2657'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2657&bbsId=1520'  ><span>학교 시설 개방 민원창구</span></a></li>
-											<li id='currMenuId2660'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2660&bbsId=1523'  ><span>이용수칙</span></a></li>
-											<li id='currMenuId2665'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2665&bbsId=1527'  ><span>사용료 징수</span></a></li>
-											<li id='currMenuId2672'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2672&bbsId=1531'  ><span>민원상담</span></a></li>
-										</ul>
-									</li>
-									<li id='currMenuId2678'><a href='/bunwon-e/qr/qrspns/selectQrspnsList.do?mi=2678'  ><span>설문조사</span></a></li>
-									<li id='currMenuId2682'><a href='/bunwon-e/ad/fm/foodmenu/selectFoodMenuView.do?mi=2682'  ><span>학교급식</span></a>
-										<ul class="dep03">
-											<li id='currMenuId10036'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=10036&bbsId=6010'  ><span>급식영양소식</span></a></li>
-											<li id='currMenuId10037'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=10037&bbsId=6011'  ><span>급식영양상담</span></a></li>
-										</ul>
-									</li>
-									<li id='currMenuId2687'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2687&bbsId=1537'  ><span>보건정보</span></a></li>
-									<li id='currMenuId2689'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2689&bbsId=1538'  ><span>혁신학교운영</span></a></li>
-								</ul>
-							</li>
-							<li id='currMenuId2693'>
-								<a href='/bunwon-e/na/ntt/selectNttList.do?mi=2693&bbsId=1540'  >학교평가</a>
-							</li>
-							<li id='currMenuId2697'>
-								<a href='/bunwon-e/cm/cntnts/cntntsView.do?mi=2699&cntntsId=528'  >전자민원창구</a>
-								<ul class='dep02'>
-									<li id='currMenuId2699'><a href='/bunwon-e/cm/cntnts/cntntsView.do?mi=2699&cntntsId=528'  ><span>민원안내</span></a></li>
-									<li id='currMenuId2704'><a href='/bunwon-e/cm/cntnts/cntntsView.do?mi=2704&cntntsId=529'  ><span>홈에듀민원서비스</span></a></li>
-									<li id='currMenuId2708'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2708&bbsId=1547'  ><span>묻고답하기</span></a></li>
-									<li id='currMenuId2712'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2712&bbsId=1549'  ><span>민원신청</span></a></li>
-								</ul>
-							</li>
-							<li id='currMenuId2720'>
-								<a href='/bunwon-e/na/ntt/selectNttList.do?mi=2723&bbsId=1556'  >교직원마당</a>
-								<ul class='dep02'>
-									<li id='currMenuId2723'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2723&bbsId=1556'  ><span>업무자료실</span></a></li>
-									<li id='currMenuId2724'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2724&bbsId=1557'  ><span>교수/학습자료실</span></a></li>
-									<li id='currMenuId2727'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2727&bbsId=1559'  ><span>연수자료실</span></a></li>
-									<li id='currMenuId2729'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2729&bbsId=1560'  ><span>회의록</span></a></li>
-									<li id='currMenuId2732'><a href='/bunwon-e/na/ntt/selectNttList.do?mi=2732&bbsId=1562'  ><span>행정실</span></a></li>
-								</ul>
-							</li>
-						</ul>
-								<!--END-->
-								</div>
-							</aside>
-							
-							
-
-
-<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
-
-<div class="snsBox">
-	<button type="button" class="btnShare"><span class="hid">공유</span></button>
-	<div class="sns_more">
-		<button type="button" class="btnFbook" title="페이스북 새창열림" onclick="goSns('fbook');"><span class="hid">페이스북</span></button>
-		<button type="button" class="btnTwt" title="트위터 새창열림" onclick="goSns('twt');"><span class="hid">트위터</span></button>
-		<button type="button" class="btnkko" title="카카오톡 새창열림" onclick="goSns('kkot');"><span class="hid">카카오톡</span></button>
-		<!-- <button type="button" class="btnkks" title="카카오스토리" onclick="goSns('kkots');"><span class="hid">카카오스토리</span></button>
-		<button type="button" class="btnBlog" title="블로그" onclick="goSns('blog');"><span class="hid">블로그</span></button> -->
-	</div> 
-	<button type="button" class="btnPrint"><span class="hid">인쇄</span></button>
-</div>
-
-<script>
-//sns
-$(function() {
-  $('.snsBox button.btnShare').click(function() {
-	  $(this).toggleClass("active");
-	  $(".sns_more").slideToggle(300);
-  });
-});
-  
-//게시물 공유
-function goSns(shareTy){ 
-	var htmlTitle = '분원초등학교';
-	var title = ''; // 메뉴타이틀의 경우 스크립트 추가되어 오류  ;
-	var menuTitle = '학교일정';
-	var mi = '2547';
-	var _br2 = encodeURIComponent('\n'); 
-	var linkUrl = location.href;
-	
- 	var KakaoInitYN = 'N';
-	
-	if(linkUrl.indexOf('?') > -1) {
-		if(linkUrl.indexOf('mi=') < 0) {
-			linkUrl = linkUrl + '&mi=' +mi;
-		}
-	} else {
-		if(linkUrl.indexOf('mi=') < 0) {
-			linkUrl = linkUrl + '?mi=' +mi;
-		}
-	}
-	
-	linkUrl = encodeURIComponent(linkUrl);
-	
-	if(menuTitle != '메뉴명없음') {
-		title = htmlTitle + ' : ' + menuTitle;
-	} else {
-		title = htmlTitle;
-	}
-	
-	title = encodeURIComponent(title);
-
-	if(shareTy == "fbook") {
-		window.open('https://www.facebook.com/sharer/sharer.php?u='+ linkUrl, 'facebook', 'width=626,height=436');
-	} else if(shareTy == "twt") {
-		window.open('https://twitter.com/intent/tweet?url='+ linkUrl + '&text=' + title, 'twitter', 'width=626,height=436');
-	} else if(shareTy == "kkot") {
-		
-			if(KakaoInitYN == 'N'){
-				/*kakao developer에 어플리케이션 등록 후 키 변경  필요*/
-				Kakao.init('267ac3580a6381bd7327a6e1a33ed2cc');
- 				KakaoInitYN = 'Y';
-			}
-			
-			var description = '#경기도교육청 #경기도교육청';
-			//var description = '#'+$('.header h1 a').attr('title');
-			var title = $('.title').text();
-			
-			if(title == "") {
-				title = document.title;
-			}
-			
-			Kakao.Link.sendDefault({
-				objectType: 'feed',
-				content: {
-					title: title, //제목
-					description: description, // 로고 title 값(sysNM), 설명
-					imageUrl: 'https://www.goegh.kr/images/com/goedu.gif', //이미지URL
-					link: {
-						mobileWebUrl: location.href, //공유할 URL
-						webUrl: location.href //공유할 URL
-					}
-				},
-				/* social: {
-					likeCount: 286,
-					commentCount: 45,
-					sharedCount: 845
-				}, */
-				buttons: [
-				  	{
-				  		title: '자세히보기',
-				  		link: {
-				  			mobileWebUrl: location.href,
-				  			webUrl: location.href
-				  		}
-				  	}
-				  	/*, {
-				  		title: '링크 보기',
-				  		link: {
-				  			mobileWebUrl: linkUrl,
-				  			webUrl: linkUrl
-				  		}
-				  	} */
-				 ]
-		    });
-			
-	} else if(shareTy == "kkots") {
-		window.open('https://story.kakao.com/s/share?url='+ linkUrl + '&text=' + title, 'kakaostory', 'menubar=no,toolbar=no,resizable=yes,scrollbars=yes,height=400,width=600');
-	} else if(shareTy == "band") {
-		window.open('http://band.us/plugin/share?body='+ title + _br2 + linkUrl + '&route=' + linkUrl, 'band', 'width=410, height=540, resizable=no');
-	} else if(shareTy == "blog") {
-		window.open('https://share.naver.com/web/shareView.nhn?url='+ linkUrl + '&title='+title, 'blog', 'width=410, height=540, resizable=no');
-	}
-}
-</script> <!-- 공통 Sns -->
-							
-<script type="text/javascript">
-	// 미들메뉴 활성화 시키기
-	$(document).ready(function(){
-		var menuLevel = "2";
-		var currMenuId = "";
-		if (menuLevel < 4) {
-			currMenuId = "2547";
-		} else {
-			currMenuId = "2547";
-		}
-		
-		if (currMenuId != "") {
-			if (menuLevel > 0) { // 1,2,3,4,5
-				$("#currMenuId" + currMenuId).addClass("active");
-				$("#che" + currMenuId).removeAttr('onclick');
-				if (menuLevel > 1) { // 2,3,4,5
-					$("#currMenuId" + currMenuId).parent().parent().addClass("active");
-					$("#che" + currMenuId).removeAttr('onclick');
-					if (menuLevel > 2) { // 3,4,5 (4,5는 3레벨 취급)
-						$("#currMenuId" + currMenuId).parent().parent().parent().parent().addClass("active");
-						$("#che" + currMenuId).removeAttr('onclick');
-					}
-				}
-			}
-			snb(); // active 되어있는 메뉴를 중심으로 select 생성 (/00_common/js/common.js)
-		}
-	});
-</script>
-
-
-					<!-- //서브메뉴 -->
-					
-					<!-- 서브 영역 -->
-					<div id="subContent">
-						<div class="subContent_body">
-							<h2 id="pageTitle">학교일정</h2>
-							<!-- contents -->
-								
-
-
-
-<div>
-	<!--START-->
-	
-	<!-- 2113 UPPER TAB START-->
-	
-	<!-- 2113 UPPER TAB END-->
-
-    <!--END-->
-</div>
-
-
-								<link href="/css/com/fullcalendar/fullcalendar.css" rel="stylesheet" media="all">
-<script src="/js/jquery-ui.min.js"></script>
-<script type="text/javascript" src="/js/jquery.bpopup.min.js"></script>
-<div class="container">
-	<div class="tab_st1">
-		<ul>
-			<li class="on"><a href="javascript:;" title="현재 페이지" ><span>리스트</span></a></li>
-			<li ><a href="javascript:;" onclick="changeLevel('M');"><span>캘린더</span></a></li>
-			<li ><a href="javascript:;" onclick="changeLevel('W');"><span>주간일정</span></a></li>
-			<li ><a href="javascript:;" onclick="changeLevel('D');"><span>일간일정</span></a></li>
-		</ul>
+	<div class='tbl_tbody_year'>
+		<table>
+			<caption>년간 일정에 대하여 월, 기간, 일정 내용 을 제공하는 표입니다.</caption>
+			<colgroup>
+				<col style='width:15%;'>
+				<col style='width:20%;'>
+				<col style='width:*;'>
+			</colgroup>
+			<tbody>
+				<tr>
+					<th rowspan='38'>01 월</th>
+					<td class="nowrap"><span>01.01 (목)</span> ~ <span>01.01 (목)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23214', '2026/01/01', '2026/01/01', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.01 (목)</span> ~ <span>01.01 (목)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23215', '2026/01/01', '2026/01/01', '');">신정</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.02 (금)</span> ~ <span>01.02 (금)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23216', '2026/01/02', '2026/01/02', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.03 (토)</span> ~ <span>01.03 (토)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23217', '2026/01/03', '2026/01/03', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.03 (토)</span> ~ <span>01.03 (토)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23218', '2026/01/03', '2026/01/03', '');">토요휴업일</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.04 (일)</span> ~ <span>01.04 (일)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23219', '2026/01/04', '2026/01/04', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.05 (월)</span> ~ <span>01.05 (월)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23220', '2026/01/05', '2026/01/05', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.06 (화)</span> ~ <span>01.06 (화)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23221', '2026/01/06', '2026/01/06', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.07 (수)</span> ~ <span>01.07 (수)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23222', '2026/01/07', '2026/01/07', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.08 (목)</span> ~ <span>01.08 (목)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23223', '2026/01/08', '2026/01/08', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.09 (금)</span> ~ <span>01.09 (금)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23224', '2026/01/09', '2026/01/09', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.10 (토)</span> ~ <span>01.10 (토)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23225', '2026/01/10', '2026/01/10', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.10 (토)</span> ~ <span>01.10 (토)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23226', '2026/01/10', '2026/01/10', '');">토요휴업일</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.11 (일)</span> ~ <span>01.11 (일)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23227', '2026/01/11', '2026/01/11', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.12 (월)</span> ~ <span>01.12 (월)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23228', '2026/01/12', '2026/01/12', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.13 (화)</span> ~ <span>01.13 (화)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23229', '2026/01/13', '2026/01/13', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.14 (수)</span> ~ <span>01.14 (수)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23230', '2026/01/14', '2026/01/14', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.14 (수)</span> ~ <span>01.14 (수)</span></td>
+					<td><a href="javascript:viewSchdulInfo('25621', '2026/01/14', '2026/01/14', 'lavender');">신입생 예비소집일(2차)</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.15 (목)</span> ~ <span>01.15 (목)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23231', '2026/01/15', '2026/01/15', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.16 (금)</span> ~ <span>01.16 (금)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23232', '2026/01/16', '2026/01/16', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.17 (토)</span> ~ <span>01.17 (토)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23233', '2026/01/17', '2026/01/17', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.17 (토)</span> ~ <span>01.17 (토)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23234', '2026/01/17', '2026/01/17', '');">토요휴업일</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.18 (일)</span> ~ <span>01.18 (일)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23235', '2026/01/18', '2026/01/18', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.19 (월)</span> ~ <span>01.19 (월)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23236', '2026/01/19', '2026/01/19', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.20 (화)</span> ~ <span>01.20 (화)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23237', '2026/01/20', '2026/01/20', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.21 (수)</span> ~ <span>01.21 (수)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23238', '2026/01/21', '2026/01/21', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.22 (목)</span> ~ <span>01.22 (목)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23239', '2026/01/22', '2026/01/22', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.23 (금)</span> ~ <span>01.23 (금)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23240', '2026/01/23', '2026/01/23', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.24 (토)</span> ~ <span>01.24 (토)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23241', '2026/01/24', '2026/01/24', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.24 (토)</span> ~ <span>01.24 (토)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23242', '2026/01/24', '2026/01/24', '');">토요휴업일</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.25 (일)</span> ~ <span>01.25 (일)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23243', '2026/01/25', '2026/01/25', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.26 (월)</span> ~ <span>01.26 (월)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23244', '2026/01/26', '2026/01/26', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.27 (화)</span> ~ <span>01.27 (화)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23245', '2026/01/27', '2026/01/27', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.28 (수)</span> ~ <span>01.28 (수)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23246', '2026/01/28', '2026/01/28', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.29 (목)</span> ~ <span>01.29 (목)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23247', '2026/01/29', '2026/01/29', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.30 (금)</span> ~ <span>01.30 (금)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23248', '2026/01/30', '2026/01/30', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.31 (토)</span> ~ <span>01.31 (토)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23249', '2026/01/31', '2026/01/31', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>01.31 (토)</span> ~ <span>01.31 (토)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23250', '2026/01/31', '2026/01/31', '');">토요휴업일</a></td>
+				</tr>
+				<tr>
+					<th rowspan='35'>02 월</th>
+					<td class="nowrap"><span>02.01 (일)</span> ~ <span>02.01 (일)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23251', '2026/02/01', '2026/02/01', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.02 (월)</span> ~ <span>02.02 (월)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23252', '2026/02/02', '2026/02/02', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.03 (화)</span> ~ <span>02.03 (화)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23253', '2026/02/03', '2026/02/03', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.04 (수)</span> ~ <span>02.04 (수)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23254', '2026/02/04', '2026/02/04', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.05 (목)</span> ~ <span>02.05 (목)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23255', '2026/02/05', '2026/02/05', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.06 (금)</span> ~ <span>02.06 (금)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23256', '2026/02/06', '2026/02/06', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.07 (토)</span> ~ <span>02.07 (토)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23257', '2026/02/07', '2026/02/07', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.07 (토)</span> ~ <span>02.07 (토)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23258', '2026/02/07', '2026/02/07', '');">토요휴업일</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.08 (일)</span> ~ <span>02.08 (일)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23259', '2026/02/08', '2026/02/08', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.09 (월)</span> ~ <span>02.09 (월)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23260', '2026/02/09', '2026/02/09', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.10 (화)</span> ~ <span>02.10 (화)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23261', '2026/02/10', '2026/02/10', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.11 (수)</span> ~ <span>02.11 (수)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23262', '2026/02/11', '2026/02/11', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.12 (목)</span> ~ <span>02.12 (목)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23263', '2026/02/12', '2026/02/12', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.13 (금)</span> ~ <span>02.13 (금)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23264', '2026/02/13', '2026/02/13', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.14 (토)</span> ~ <span>02.14 (토)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23265', '2026/02/14', '2026/02/14', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.14 (토)</span> ~ <span>02.14 (토)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23266', '2026/02/14', '2026/02/14', '');">토요휴업일</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.15 (일)</span> ~ <span>02.15 (일)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23267', '2026/02/15', '2026/02/15', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.16 (월)</span> ~ <span>02.16 (월)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23268', '2026/02/16', '2026/02/16', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.16 (월)</span> ~ <span>02.16 (월)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23269', '2026/02/16', '2026/02/16', '');">설날</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.17 (화)</span> ~ <span>02.17 (화)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23270', '2026/02/17', '2026/02/17', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.17 (화)</span> ~ <span>02.17 (화)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23271', '2026/02/17', '2026/02/17', '');">설날</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.18 (수)</span> ~ <span>02.18 (수)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23272', '2026/02/18', '2026/02/18', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.18 (수)</span> ~ <span>02.18 (수)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23273', '2026/02/18', '2026/02/18', '');">설날</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.19 (목)</span> ~ <span>02.19 (목)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23274', '2026/02/19', '2026/02/19', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.20 (금)</span> ~ <span>02.20 (금)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23275', '2026/02/20', '2026/02/20', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.21 (토)</span> ~ <span>02.21 (토)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23276', '2026/02/21', '2026/02/21', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.21 (토)</span> ~ <span>02.21 (토)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23277', '2026/02/21', '2026/02/21', '');">토요휴업일</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.22 (일)</span> ~ <span>02.22 (일)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23278', '2026/02/22', '2026/02/22', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.23 (월)</span> ~ <span>02.23 (월)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23279', '2026/02/23', '2026/02/23', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.24 (화)</span> ~ <span>02.24 (화)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23280', '2026/02/24', '2026/02/24', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.25 (수)</span> ~ <span>02.25 (수)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23281', '2026/02/25', '2026/02/25', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.26 (목)</span> ~ <span>02.26 (목)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23282', '2026/02/26', '2026/02/26', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.27 (금)</span> ~ <span>02.27 (금)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23283', '2026/02/27', '2026/02/27', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.28 (토)</span> ~ <span>02.28 (토)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23284', '2026/02/28', '2026/02/28', '');">겨울방학</a></td>
+				</tr>
+				<tr>
+					<td class="nowrap"><span>02.28 (토)</span> ~ <span>02.28 (토)</span></td>
+					<td><a href="javascript:viewSchdulInfo('23285', '2026/02/28', '2026/02/28', '');">토요휴업일</a></td>
+				</tr>
+			</tbody>
+		</table>
 	</div>
-	<form name="listForm" id="listForm" action="/bunwon-e/ps/schdul/selectSchdulMainList.do" method="post">
-		<input type="hidden" name="schdulSeq"		id="schdulSeq"		value="" />
-		<input type="hidden" name="schdulLevel"		id="schdulLevel"	value="Y" />
-		<input type="hidden" name="fromDate"		id="fromDate"		value="" />
-		<input type="hidden" name="toDate"			id="toDate"			value="" />
-		<input type="hidden" name="date"			id="date"			value="" />
-		<input type="hidden" name="weekNum"			id="weekNum"		value="" />
-		<input type="hidden" name="chkNP"			id="chkNP"			value="" />
-		<input type="hidden" name="srchDate"		id="srchDate"		value="" />
-		<input type="hidden" name="schType"			id="schType"		value="" />
-		<input type="hidden" name="schColor"		id="schColor"		value="" />
-		<input type="hidden" id="sysId"				value="bunwon-e" />
-		<input type="hidden" name="menuId"			id="mi"				value="2547" />
-		
-		<!-- 월간 -->
-		<div class="cal_box">
-			<div class="cal_top">
-				
-				
-				
-				<div class="cal_ctrl">
-					
-						
-							<a href="javascript:fn_selectSchdNPView('Y','P');" class="btn_cal_pre">
-								<i class="xi-angle-left"></i>
-								<span class="sr-only">이전</span>
-							</a>
-							<span class="date">2026</span>
-							
-							<a href="javascript:fn_selectSchdNPView('Y','N');" class="btn_cal_next">
-								<i class="xi-angle-right"></i>
-								<span class="sr-only">다음</span>
-							</a>
-							<p>
-								<a href="javascript:fn_selectSchdNPView('Y','T');" class="btn_cal_today"><i class="xi-check"></i>오늘</a>
-						
-						
-						
-						
-						
-					
-				</div>
-				
-				<div class="cal_ctrl4">
-				
-					<div class="cal_ctrSear">
-						
-						
-							<select name="srchYear" title="년도 선택">
-								<option  value="2025">2025년</option>
-								<option selected="selected" value="2026">2026년</option>
-								<option  value="2027">2027년</option>
-							</select>
-						
-						
-						
-						<a class="searchBtn" href="javascript:searchMonthSchdul();" title="검색">이동</a>
-					</div>
-				</div>
-				
-			</div>
-			
-			
-			
-				
-					<div class="inner3" id="schdul3"></div>
-				
-				
-				
-			
-		</div>
-	</form>
-</div>
-<!-- bPopup 엑셀 다운로드 페이지 -->
-<div id="insertAllDiv" class="Pstyle" style="display:none; width: 40%; height: 35%;">
-	<div id="insertAllDivCnt">
-	</div>
-</div>
-
-
-<script type="text/javascript">
-	$(function(){
-		drawTable();
-		$('#srchDate2, #srchDate1').change(function(){
-			var date = $('#srchDate1').val() + '/' + $('#srchDate2').val();
-			var sysId = document.getElementById('sysId').value;
-			$.ajax({
-				type : 'POST'
-				, datatype : 'json'
-				, data : {
-					date : date
-				}
-				, url : '/' + sysId + '/ps/schdul/getWeekCount.do'
-				, success : function(result){ 
-					var res = JSON.parse(result);
-					if(res.resultAt == 'Y'){
-						var data = '';
-						for(var i=1; i<=res.weekCount; i++){
-							data += '\t\t<option value="' + i + '">' + i + '주차</option>\n';
-						}
-						$('#srchDate3').html(''); 
-						$('#srchDate3').html(data);
-					}else{
-						alert('오류가 발생했습니다.\n관리자에게 문의하세요.');
-					}
-				}
-				, error : function(result){
-					alert('오류가 발생했습니다.\n관리자에게 문의하세요.');
-				}
-			});
-		});
-
-		$(document).on('click','#allday',function(){
-			var chk = $(this).is(':checked');
-			if(chk){
-				$('.time').hide();
-			}else{
-				$('.time').show();
-			}
-		});
-		
-	});
-
-	
-	//일정 등록 페이지
-	function fn_insertView(){
-		var listFrm = document.getElementById('listForm');
-		var mi = document.getElementById('mi').value;
-		var sysId = document.getElementById('sysId').value;
-		var url = '/' + sysId + '/ps/schdul/insertSchdulView.do?mi=' + mi;
-		listFrm.action = url;
-		listFrm.submit();
-	}
-	
-	function viewSchdulInfo(no, bgnde, endde, se){
-		var mi = document.getElementById('mi').value;
-		var sysId = document.getElementById('sysId').value;
-		if(no != 'holiday'){
-			$('#schdulSeq').val(no);
-			$("#listForm").attr('action', '/' + sysId + '/ps/schdul/selectSchdulInfo.do?mi=' + mi).submit();   
-		}
-	}
-
-	function drawTable(){
-		var mi = document.getElementById('mi').value;
-		var sysId = document.getElementById('sysId').value;
-		var schdulLevel = 'Y';
-		$.ajax({
-			type : 'POST'
-			, datatype : 'json'
-			, data :  $('#listForm').serialize()
-			, url : '/' + sysId + '/ps/schdul/selectSchdulList.do?mi=' + mi
-			, success : function(result){
-				var res = JSON.parse(result);
-				if(schdulLevel == 'M'){
-					$('#schdul1').html(res);
-				}else if(schdulLevel == 'Y'){
-					$('#schdul3').html(res);
-				}else{
-					$('#schdul2').html(res);
-					var liNum = $('.cal_box .inner2 table td div ul.sch_li li').length;
-					for(var i = 0; i < liNum; i++){
-						var objLi = $('.cal_box .inner2 table td div ul.sch_li li').eq(i);
-						for(var j=0; j<liNum; j++){
-							var compObj = $('.cal_box .inner2 table td div ul.sch_li li').eq(j);
-							var bTime = objLi.attr('btime')+':00';
-							var eTime = objLi.attr('etime')+':00';
-							if(i != j && objLi.attr('date') == compObj.attr('date')){
-								var bDate = new Date(objLi.attr('date') + ' ' + bTime);
-								var eDate = new Date(objLi.attr('date') + ' ' + eTime);
-								var compbDate = new Date(compObj.attr('date') + ' ' + compObj.attr('btime')+':00');
-								var compeDate = new Date(compObj.attr('date') + ' ' + compObj.attr('etime')+':00');
-								if((bDate.getTime() <= compbDate.getTime() && eDate.getTime() >= compbDate.getTime())
-										|| (bDate.getTime() <= compeDate.getTime() && eDate.getTime() >= compeDate.getTime())){
-									if(compObj.attr('count') == null){
-										compObj.attr('count', 1);
-									}else{
-										compObj.attr('count', Number(compObj.attr('count'))+1);
-									}
-								}
-							}
-						}
-					}
-					for(var i = 0; i < liNum; i++){
-						var objLi = $('.cal_box .inner2 table td div ul.sch_li li').eq(i);
-						var leftNum = 0;
-						for(var j=0; j<liNum; j++){
-							var compObj = $('.cal_box .inner2 table td div ul.sch_li li').eq(j);
-							var bTime = objLi.attr('btime') + ':00';
-							var eTime = objLi.attr('etime') + ':00';
-							if(objLi.attr('date') == compObj.attr('date')){
-								var bDate = new Date(objLi.attr('date') + ' ' + bTime);
-								var eDate = new Date(objLi.attr('date') + ' ' + eTime);
-								var compbDate = new Date(compObj.attr('date') + ' ' + compObj.attr('btime')+':00');
-								var compeDate = new Date(compObj.attr('date') + ' ' + compObj.attr('etime')+':00');
-								if((bDate.getTime() <= compbDate.getTime() && eDate.getTime() >= compbDate.getTime())
-										|| (bDate.getTime() <= compeDate.getTime() && eDate.getTime() >= compeDate.getTime())){
-									if(compObj.attr('count') != null){
-										compObj.attr('left', leftNum);
-										leftNum++;
-									}
-								}
-							}
-						}
-					}
-					for(var e = 0; e < liNum; e++){
-						var obj = $('.cal_box .inner2 table td div ul.sch_li li').eq(e);
-						var width = 100/(Number(obj.attr('count'))+1) -2;
-						obj.css('width', width + '%');
-						var left = obj.attr('left');
-						var leftSize = 0;
-						if(obj.attr('left') != null){
-							for(var r=0; r<left; r++){
-								if(left != 0){
-									leftSize += width; 
-								}
-							}
-							if(leftSize != 0){
-								leftSize += 1;
-							}
-							obj.css('left', leftSize+'%');
-						}
-					}
-				}
-			}
-			, error : function(result) {  
-				alert('오류가 발생했습니다.\n관리자에게 문의하세요.');
-			}
-		});
-	}
-
-	function searchMonthSchdul(){
-		var sysId = document.getElementById('sysId').value;
-		var mi = document.getElementById('mi').value;
-		var level = 'Y'; 
-		var srchDate = '';
-		if(level == 'M'){
-			srchDate = $('#srchDate1').val()+'/'+$('#srchDate2').val();
-		}else if(level == 'W'){
-			$('#weekNum').val($('#srchDate3').val());
-			srchDate = $('#srchDate1').val()+'/'+$('#srchDate2').val();
-		}else if(level == 'D'){
-			srchDate = $('#srchDate1').val()+'/'+$('#srchDate2').val()+'/'+$('#srchDate4').val();
-		}
-		$('#srchDate').val(srchDate);
-		$('#listForm').attr('action', '/' + sysId + '/ps/schdul/selectSchdulMainList.do?mi=' + mi).submit();
-	}
-
-	//이전 이후 목록 조회 조회형식 구분 년,월,주,일(Y,M,W,D) 이전이후 구분 이전,이후,오늘(N,P,T)
-	function fn_selectSchdNPView(lv_val, chknp_val){
-		var sysId = document.getElementById('sysId').value;
-		var mi = document.getElementById('mi').value;
-		$('#schdulLevel').val(lv_val);
-		$('#chkNP').val(chknp_val);
-		$('#listForm').attr('action', '/' + sysId + '/ps/schdul/selectSchdulMainList.do?mi=' + mi).submit();
-	}
-
-	function changeLevel(val){
-		var sysId = document.getElementById('sysId').value;
-		var mi = document.getElementById('mi').value;
-		$('#schdulLevel').val(val);
-		$('#fromDate').val('');
-		$('#toDate').val('');
-		$('#listForm').attr('action', '/' + sysId + '/ps/schdul/selectSchdulMainList.do?mi=' + mi).submit();
-	}
-
-	//전체 
-	function schdulSearch(val, cal_val){
-		var sysId = document.getElementById('sysId').value;
-		var mi = document.getElementById('mi').value;
-		$('#schType').val(val);			//검색 캠퍼스 구분
-		$('#schColor').val(cal_val);	//검색 컬러
-		$("#listForm").attr('action', '/' + sysId + '/ps/schdul/selectSchdulMainList.do?mi=' + mi).submit();
-	}
-	
-	$(function() {
-		$("#excelFile").on("change", function() {
-			var file = this.files[0];
-			fileName = file.name;
-			filesExt = fileName.substring(fileName.lastIndexOf(".") + 1);
-
-			if (fileName.indexOf("일정정보_일괄등록양식") < 0) {
-				alert("올바른 양식 파일이  아닙니다.\n일괄등록양식을 다운로드해주세요.");
-				$("#excelFile").val("");
-
-			} else if (filesExt != "xlsx") {
-				alert("올바른 양식 파일이  아닙니다.\n일괄등록양식을 다운로드해주세요.");
-				$("#excelFile").val("");
-
-			} else {
-				$("#fileName").val(fileName);
-			}
-		});
-	});
-	
-	//엑셀 등록 페이지
-	function fn_insertAllView(){
-		var sysId = $("#sysId").val();
-		$.ajax({
-			 type: "post",
-			  url: "/"+sysId+"/ps/schdul/excelUploadPage.do",
-		 dataType: "html",
-		     data: $("#listForm").serialize(),
-		  success: function(data) {
-			 $('#insertAllDivCnt').html(data);
-			 $('#insertAllDiv').bPopup({
-					modalClose : false,
-					opacity : 0.7
-				});
-			 },
-			error : function(data) {
-				alert("오류가 발생하였습니다.\n관리자에게 문의하세요.");
-			}
-		});
-	}
-
-	//나이스연계 페이지
-	function fn_neisPage(){
-		var sysNm = '';
-		if(sysNm.indexOf("유치원") != -1){
-			alert("유치원은 나이스연계를 할 수 없습니다");
-			return;
-		}
-		var sysId = $("#sysId").val();
-		$.ajax({
-			 type: "post",
-			  url: "/"+sysId+"/ps/schdul/neisPage.do",
-		 dataType: "html",
-		     data: $("#listForm").serialize(),
-		  success: function(data) {
-			 $('#insertAllDivCnt').html(data);
-			 $('#insertAllDiv').bPopup({
-					modalClose : false,
-					opacity : 0.7
-				});
-			 },
-			error : function(data) {
-				alert("오류가 발생하였습니다.\n관리자에게 문의하세요.");
-			}
-		});
-	}
-</script>
-
-							<!-- contents -->
-							
-							<!-- 자료관리자 -->
-							
-
-
-								
-
-							<!--// 자료관리자 -->
-						</div>
-					</div>
-					<!-- //서브 영역 -->
-				</div>
-			</div>
-			<!-- //컨테이너 -->
-			<!-- footer -->
-			
-
-
-			<!-- 퀵메뉴 -->
-			
-
-
-			<!-- 퀵메뉴 -->
-			
-			
-			<!-- //퀵메뉴 -->
-			
-
-
-
-			<!-- //퀵메뉴 -->
-
-			<footer id="footer">
-				<div class="container">
-					<div class="footer_link">
-						<!--LPM_START-->
-						
-						<ul>
-							<li><a href="/bunwon-e/iv/indvdlView/selectIndvdlView.do" ><strong>개인정보처리방침</strong></a></li>
-							<li><a href="/bunwon-e/iv/indvdlView/selectCpyrhtView.do" >저작권보호정책</a></li>
-							<li><a href="/bunwon-e/iv/indvdlView/selectVideoView.do" >영상정보처리기기운영방침</a></li>
-						</ul>
-						<!--LPM_END-->
-					</div>
-					
-					
-					
-					
-					
-					
-						<address>
-							
-								<span>
-									경기도 광주시 남종면 산수로 1642-1 우 : 12708
-								</span>
-							
-							<span>
-								
-									Tel : 교무실 : 031)768-8004(평일08:30~16:30) | 유치원 : 031)768-8005(평일08:30~16:30) | 행정실 : 031)768-8008(평일08:30~16:30) | 당직실 : 031)768-8008(평일 야간, 휴일)&nbsp;&nbsp;|&nbsp;&nbsp;
-								
-								
-									Fax : 031)768-8007&nbsp;&nbsp;
-								
-								
-							</span>
-                        </address>
-					
-					
-					<div class="visitant">
-						<h2>방문자 통계</h2>
-						<ul>
-							<li class="today"><strong>Today</strong>0명</li>
-							<li class="total"><strong>Total</strong>0명</li>
-						</ul>
-					</div>
-					
-					<!-- 구글 번역 스크립트 -->
-					<script type="text/javascript">
-					function googleTranslateElementInit() {
-						  new google.translate.TranslateElement({pageLanguage: 'ko', includedLanguages: 'de,en,et,fi,hr,id,it,ja,kk,km,ko,mn,si,th,tl,uz,vi,zh-CN,zh-TW,es,fr', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
-						}
-					</script>
-					<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-					<!-- //구글 번역 스크립트 -->
-					
-					<!-- 구글 번역 코드 -->
-					<div class="gbSchlTrans">
-						<div id="google_translate_element"></div>
-					</div>
-					<!-- //구글 번역 코드 -->
-					
-					
-					
-						<p class="copyright">Copyright © Gyeonggido Office of Education, All Right Reserved.</p>
-					
-					<a href="#" class="btn_top"><img src="/00_common/images/common/btn_top.png" alt="맨위로 가기"></a>
-				</div>
-			</footer>
-			
-<script type="text/javascript">
-	$(document).ready(function(){
-		var sysId = "bunwon-e";
-		
-		$.ajax({
-			type : "post",
-			dataType : "json",
-			url : "/" + sysId + "/st/visit/selectVisitTodayToal.do",
-			data : {
-				sysId : sysId
-			},
-			success : function(result){
-				var todayLi = "<strong>Today</strong>" + result.todayCount + "명";
-				var totalLi = "<strong>Total</strong>" + result.totalCount + "명";
-				
-				$(".visitant > ul > .today").html(todayLi);
-				$(".visitant > ul > .total").html(totalLi);
-			},
-			error:function(data){
-				alert("오류가 발생하였습니다.\n관리자에게 문의하세요.");
-			}
-		});
-	});
-</script>
-
-
-
-			<!-- // footer -->
-		</div>
-        <script type="text/javascript" src="/js/common-scroll.js"></script>
-        <script type="text/javascript" src="/js/common.js"></script>
-		<!-- menuForm -->
-        
-
-
-<!--공통 메뉴 Form -->
-<form name="mainMenuForm" id="mainMenuForm" method="post">
-	<input type="hidden" name="mi" id="nowMenuId" value="" >
-	<input type="hidden" name="paramNm" id="paramNm" value="">
-	<input type="hidden" name="paramVal" id="paramVal" value="">
-</form>
-<!--/공통 메뉴 Form -->
-	
-<script>
-$(function() {
-	
-	//공통 submit
-	$(".menuFormBtn").click(function(){
-		var paramVal = $(this).attr('data-param'); 
-		var paramNm = $(this).attr('data-nm');
-		var paramUrl = $(this).attr('data-url');
-		$("#paramVal").val(paramVal);
-		$("#paramNm").val(paramNm);
-		setTrimMenuId();
-		$("#mainMenuForm").attr('action', paramUrl).submit();
-	});
-	
-});
-
-//파라미터 페이지 이동 
-function goParamPage( setVal, setNm, setUrl ) {
-	$("#paramNm").val(setNm);
-	$("#paramVal").val(setVal);
-	setTrimMenuId();
-	$("#mainMenuForm").attr('action', setUrl).submit();
-};
-
-//메뉴 아이디 공백제거
-function setTrimMenuId(){
-	var nowMenuId = $.trim($("#nowMenuId").val());
-	$("nowMenuId").val(nowMenuId);
-};
-</script>
-	
-	 
-	
-	
-
-	
-        <!-- /menuForm -->
-	</body>
-</html>
-
-
-
-

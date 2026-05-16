@@ -1,0 +1,70 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Python 디버거: 현재 파일",
+            "type": "debugpy",
+            "request": "launch",
+            "program": "${file}",
+            "console": "integratedTerminal",
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "name": "School Calendar: YAML 설정으로 캘린더 생성",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "src.main",
+            "args": [
+                "--config",
+                "src/config/school_calendar.yml"
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "justMyCode": true,
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "name": "School Calendar: 사용자 Reader 권한 부여",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "src.calendar.google_calendar",
+            "args": [
+                "--config",
+                "src/config/calendar_access.yml",
+                "--grant-reader-access"
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "justMyCode": true,
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "name": "School Calendar: parse_schedule 실행",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "src.parse.schedule_parser",
+            "args": [
+                "--config",
+                "src/config/parse_schedule.yml"
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "justMyCode": true,
+            "envFile": "${workspaceFolder}/.env"
+        },
+        {
+            "name": "School Calendar: merge_events 실행",
+            "type": "debugpy",
+            "request": "launch",
+            "module": "src.calendar.merge_events",
+            "args": [
+                "--config",
+                "src/config/merge_events.yml"
+            ],
+            "console": "integratedTerminal",
+            "cwd": "${workspaceFolder}",
+            "justMyCode": true,
+            "envFile": "${workspaceFolder}/.env"
+        }
+    ]
+}
