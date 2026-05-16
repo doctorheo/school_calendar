@@ -12,6 +12,7 @@ dependencies = [
     "rich>=14.3.3",
     "loguru>=0.7.3",
     "streamlit>=1.51.0",
+    "streamlit-calendar>=1.4.0",
 ]
 
 [dependency-groups]
