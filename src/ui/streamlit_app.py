@@ -2,17 +2,16 @@ from __future__ import annotations
 
 import calendar
 import json
-from collections import defaultdict
 from dataclasses import dataclass
 from datetime import date, datetime, timedelta
 from pathlib import Path
 from typing import Iterable
 
 import streamlit as st
+from streamlit_calendar import calendar as streamlit_calendar
 
 
 DEFAULT_EVENTS_PATH = Path(__file__).resolve().parents[2] / "src" / "parse" / "output" / "merged_events.json"
-WEEKDAYS = ["월", "화", "수", "목", "금", "토", "일"]
 
 
 @dataclass(frozen=True)
@@ -82,54 +81,87 @@ def overlaps_month(event: ScheduleEvent, year: int, month: int) -> bool:
     return event.start_date <= month_end and event.end_date >= month_start
 
 
-def dates_in_month(event: ScheduleEvent, year: int, month: int) -> Iterable[date]:
-    _, last_day = calendar.monthrange(year, month)
-    current = max(event.start_date, date(year, month, 1))
-    end = min(event.end_date, date(year, month, last_day))
-
-    while current <= end:
-        yield current
-        current += timedelta(days=1)
-
-
-def events_by_day(events: Iterable[ScheduleEvent], year: int, month: int) -> dict[date, list[ScheduleEvent]]:
-    grouped: dict[date, list[ScheduleEvent]] = defaultdict(list)
-    for event in events:
-        for event_date in dates_in_month(event, year, month):
-            grouped[event_date].append(event)
-    return grouped
-
-
 def format_event_range(event: ScheduleEvent) -> str:
     if event.start_date == event.end_date:
         return event.start_date.isoformat()
     return f"{event.start_date.isoformat()} - {event.end_date.isoformat()}"
 
 
-def render_calendar(events: list[ScheduleEvent], year: int, month: int) -> None:
-    cal = calendar.Calendar(firstweekday=0)
-    grouped_events = events_by_day(events, year, month)
+def event_color(title: str) -> str:
+    if "방학" in title:
+        return "#2563eb"
+    if "휴업일" in title:
+        return "#64748b"
+    if any(keyword in title for keyword in ("설날", "신정", "공휴일")):
+        return "#dc2626"
+    return "#16a34a"
 
-    st.subheader(f"{year}년 {month}월")
-    header_columns = st.columns(7)
-    for column, weekday in zip(header_columns, WEEKDAYS, strict=True):
-        column.markdown(f"**{weekday}**")
 
-    for week in cal.monthdatescalendar(year, month):
-        columns = st.columns(7)
-        for column, current_date in zip(columns, week, strict=True):
-            in_month = current_date.month == month
-            day_events = grouped_events.get(current_date, [])
-            label = str(current_date.day) if in_month else f":gray[{current_date.day}]"
+def to_calendar_event(event: ScheduleEvent) -> dict[str, object]:
+    color = event_color(event.title)
+    return {
+        "title": event.title,
+        "start": event.start_date.isoformat(),
+        "end": (event.end_date + timedelta(days=1)).isoformat(),
+        "allDay": True,
+        "backgroundColor": color,
+        "borderColor": color,
+    }
 
-            with column:
-                with st.container(border=True):
-                    st.markdown(f"**{label}**")
-                    if in_month:
-                        for event in day_events[:3]:
-                            st.caption(event.title)
-                        if len(day_events) > 3:
-                            st.caption(f"외 {len(day_events) - 3}건")
+
+def calendar_options(year: int, month: int) -> dict[str, object]:
+    return {
+        "initialView": "dayGridMonth",
+        "initialDate": date(year, month, 1).isoformat(),
+        "locale": "ko",
+        "height": "auto",
+        "editable": False,
+        "selectable": False,
+        "headerToolbar": {
+            "left": "today prev,next",
+            "center": "title",
+            "right": "",
+        },
+        "buttonText": {
+            "today": "오늘",
+        },
+        "dayMaxEvents": True,
+    }
+
+
+def render_calendar(events: list[ScheduleEvent], year: int, month: int) -> dict | None:
+    st.subheader("월간 달력")
+    calendar_result = streamlit_calendar(
+        events=[to_calendar_event(event) for event in events],
+        options=calendar_options(year, month),
+        key=f"school-calendar-{year}-{month}",
+    )
+    return calendar_result if isinstance(calendar_result, dict) else None
+
+
+def month_from_calendar_result(calendar_result: dict | None, default_year: int, default_month: int) -> tuple[int, int]:
+    if not calendar_result:
+        return default_year, default_month
+
+    view = None
+    for value in calendar_result.values():
+        if isinstance(value, dict) and isinstance(value.get("view"), dict):
+            view = value["view"]
+            break
+
+    if not isinstance(view, dict):
+        return default_year, default_month
+
+    current_start = view.get("currentStart")
+    if not isinstance(current_start, str):
+        return default_year, default_month
+
+    try:
+        current_date = datetime.fromisoformat(current_start.replace("Z", "+00:00")).date()
+    except ValueError:
+        return default_year, default_month
+
+    return current_date.year, current_date.month
 
 
 def render_event_list(events: list[ScheduleEvent]) -> None:
@@ -165,14 +197,19 @@ def main() -> None:
         selected_year = st.selectbox("연도", years, index=years.index(default_year))
         selected_month = st.selectbox("월", list(range(1, 13)), index=default_month - 1)
 
+    calendar_result = render_calendar(events, selected_year, selected_month)
+    list_year, list_month = month_from_calendar_result(
+        calendar_result,
+        selected_year,
+        selected_month,
+    )
     month_events = [
         event
         for event in events
-        if overlaps_month(event, selected_year, selected_month)
+        if overlaps_month(event, list_year, list_month)
     ]
 
     st.metric("선택한 월 일정", len(month_events))
-    render_calendar(month_events, selected_year, selected_month)
     render_event_list(month_events)
 
 
