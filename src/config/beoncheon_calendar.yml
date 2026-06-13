@@ -1,0 +1,13 @@
+schedule:
+  url: "https://beoncheon-e.goegh.kr/beoncheon-e/ps/schdul/selectSchdulMainList.do?mi=11261"
+  parsed_output: "src/parse/output/beoncheon_parsed_schedule.json"
+
+calendar:
+  create: false
+  id: "b9b46ed9e3a0f1f25cff9ab4151151efcd79d4b904def90666d7973c17089180@group.calendar.google.com"
+  name: "번천초 학교 일정"
+  description: "번천초등학교 학사일정 자동 동기화"
+  timezone: "Asia/Seoul"
+  credentials_path: "src/calendar/service-account.json"
+  share_with_email: "jeongwoohoho@gmail.com"
+  share_role: "reader"

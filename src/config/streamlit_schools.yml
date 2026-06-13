@@ -1,0 +1,7 @@
+default_school: "분원초"
+
+schools:
+  - name: "분원초"
+    events_path: "src/parse/output/merged_events.json"
+  - name: "번천초"
+    events_path: "src/parse/output/beoncheon_merged_events.json"

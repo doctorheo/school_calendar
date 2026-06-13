@@ -1,0 +1,3 @@
+schedule:
+  parsed_input: "src/parse/output/beoncheon_parsed_schedule.json"
+  merged_output: "src/parse/output/beoncheon_merged_events.json"
