@@ -15,6 +15,20 @@ from streamlit_calendar import calendar as streamlit_calendar
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 SCHOOLS_CONFIG_PATH = PROJECT_ROOT / "src" / "config" / "streamlit_schools.yml"
 
+import sys  # noqa: E402
+import re  # noqa: E402
+
+if str(PROJECT_ROOT) not in sys.path:
+    sys.path.insert(0, str(PROJECT_ROOT))
+
+# pyrefly: ignore [missing-import]
+from src.fetch.school_schedule import fetch_website  # noqa: E402
+# pyrefly: ignore [missing-import]
+from src.parse.schedule_parser import parse_schedule  # noqa: E402
+# pyrefly: ignore [missing-import]
+from src.calendar.merge_events import merge_events  # noqa: E402
+
+
 
 @dataclass(frozen=True)
 class ScheduleEvent:
@@ -93,6 +107,87 @@ def load_school_calendars(
     return schools, default_school or schools[0].name, None
 
 
+def add_school_to_config(
+    name: str,
+    events_path: str,
+    path: Path = SCHOOLS_CONFIG_PATH,
+) -> None:
+    if path.exists():
+        try:
+            data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+        except yaml.YAMLError:
+            data = {}
+    else:
+        data = {}
+
+    if not isinstance(data, dict):
+        data = {}
+
+    if "schools" not in data or not isinstance(data["schools"], list):
+        data["schools"] = []
+
+    # Check if school already exists in config
+    for school in data["schools"]:
+        if isinstance(school, dict) and school.get("name") == name:
+            school["events_path"] = events_path
+            break
+    else:
+        data["schools"].append({
+            "name": name,
+            "events_path": events_path
+        })
+
+    if "default_school" not in data or not data["default_school"]:
+        data["default_school"] = name
+
+    path.write_text(yaml.safe_dump(data, allow_unicode=True), encoding="utf-8")
+
+
+def delete_school_from_config(
+    name: str,
+    path: Path = SCHOOLS_CONFIG_PATH,
+) -> None:
+    if not path.exists():
+        return
+
+    try:
+        data = yaml.safe_load(path.read_text(encoding="utf-8")) or {}
+    except yaml.YAMLError:
+        return
+
+    if not isinstance(data, dict):
+        return
+
+    schools = data.get("schools", [])
+    if not isinstance(schools, list):
+        return
+
+    new_schools = []
+    for school in schools:
+        if isinstance(school, dict) and school.get("name") == name:
+            events_path_str = school.get("events_path")
+            if events_path_str:
+                events_path = resolve_project_path(events_path_str)
+                if events_path.exists():
+                    try:
+                        events_path.unlink()
+                    except Exception:
+                        pass
+            continue
+        new_schools.append(school)
+
+    data["schools"] = new_schools
+
+    default_school = data.get("default_school")
+    if default_school == name:
+        if new_schools:
+            data["default_school"] = new_schools[0].get("name")
+        else:
+            data["default_school"] = None
+
+    path.write_text(yaml.safe_dump(data, allow_unicode=True), encoding="utf-8")
+
+
 def load_events(path: Path, school_name: str | None = None) -> tuple[list[ScheduleEvent], str | None]:
     if not path.exists():
         return [], f"병합 일정 파일을 찾을 수 없습니다: {path}"
@@ -139,14 +234,19 @@ def load_events(path: Path, school_name: str | None = None) -> tuple[list[Schedu
     return events, None
 
 
-def month_options(events: Iterable[ScheduleEvent]) -> tuple[list[int], int, int]:
-    years = sorted({event.start_date.year for event in events} | {event.end_date.year for event in events})
-    today = date.today()
-    if not years:
-        return [today.year], today.year, today.month
-
-    default_year = today.year if today.year in years else years[0]
-    return years, default_year, today.month
+def get_calendar_view_date(calendar_result: dict | None) -> tuple[int, int] | None:
+    if not calendar_result:
+        return None
+    for value in calendar_result.values():
+        if isinstance(value, dict) and "view" in value:
+            view = value["view"]
+            if isinstance(view, dict) and "currentStart" in view:
+                try:
+                    current_date = datetime.fromisoformat(view["currentStart"].replace("Z", "+00:00")).date()
+                    return current_date.year, current_date.month
+                except ValueError:
+                    pass
+    return None
 
 
 def overlaps_month(event: ScheduleEvent, year: int, month: int) -> bool:
@@ -250,31 +350,6 @@ def render_calendar(
     return calendar_result if isinstance(calendar_result, dict) else None
 
 
-def month_from_calendar_result(calendar_result: dict | None, default_year: int, default_month: int) -> tuple[int, int]:
-    if not calendar_result:
-        return default_year, default_month
-
-    view = None
-    for value in calendar_result.values():
-        if isinstance(value, dict) and isinstance(value.get("view"), dict):
-            view = value["view"]
-            break
-
-    if not isinstance(view, dict):
-        return default_year, default_month
-
-    current_start = view.get("currentStart")
-    if not isinstance(current_start, str):
-        return default_year, default_month
-
-    try:
-        current_date = datetime.fromisoformat(current_start.replace("Z", "+00:00")).date()
-    except ValueError:
-        return default_year, default_month
-
-    return current_date.year, current_date.month
-
-
 def render_event_list(events: list[ScheduleEvent], show_school: bool = False) -> None:
     st.subheader("월간 일정 목록")
     if not events:
@@ -329,6 +404,79 @@ def main() -> None:
             )
             selected_schools = [selected_school]
 
+        st.write("---")
+        st.header("학교 추가")
+        with st.expander("새로운 학교 일정 추가", expanded=False):
+            with st.form("add_school_form", clear_on_submit=True):
+                new_school_name = st.text_input("학교 이름", placeholder="예: 분원초")
+                new_school_url = st.text_input("일정 URL", placeholder="https://...")
+                submit_button = st.form_submit_button("추가 및 파싱")
+
+            if submit_button:
+                if not new_school_name.strip():
+                    st.error("학교 이름을 입력해 주세요.")
+                elif not new_school_url.strip():
+                    st.error("일정 URL을 입력해 주세요.")
+                else:
+                    try:
+                        # 1. Fetch website
+                        with st.spinner("학교 일정을 가져오는 중..."):
+                            html = fetch_website(new_school_url.strip())
+
+                        # 2. Parse schedule
+                        with st.spinner("일정을 파싱하는 중..."):
+                            schedules = parse_schedule(html)
+
+                        if not schedules:
+                            st.warning("파싱된 일정이 없습니다. URL을 확인해 주세요.")
+                        else:
+                            # 3. Merge events
+                            with st.spinner("일정을 병합하는 중..."):
+                                merged = merge_events(schedules)
+
+                            # 4. Save to JSON
+                            # sanitize file name
+                            safe_name = re.sub(r"[^\w\s-]", "", new_school_name.strip()).strip().replace(" ", "_")
+                            output_filename = f"{safe_name}_merged_events.json"
+
+                            relative_output_path = Path("src") / "parse" / "output" / output_filename
+                            absolute_output_path = PROJECT_ROOT / relative_output_path
+                            absolute_output_path.parent.mkdir(parents=True, exist_ok=True)
+
+                            absolute_output_path.write_text(
+                                json.dumps(merged, ensure_ascii=False, indent=2),
+                                encoding="utf-8"
+                            )
+
+                            # 5. Add to streamlit_schools.yml
+                            add_school_to_config(new_school_name.strip(), str(relative_output_path))
+                            st.success(f"'{new_school_name}' 학교가 성공적으로 추가되었습니다!")
+                            st.rerun()
+                    except Exception as e:
+                        st.error(f"오류 발생: {e}")
+
+        st.write("---")
+        st.header("학교 삭제")
+        with st.expander("등록된 학교 삭제", expanded=False):
+            if not school_names:
+                st.info("삭제할 학교가 없습니다.")
+            else:
+                with st.form("delete_school_form", clear_on_submit=True):
+                    school_to_delete = st.selectbox("삭제할 학교 선택", school_names)
+                    confirm_checkbox = st.checkbox("정말로 이 학교를 삭제하시겠습니까? (저장된 일정 데이터도 함께 삭제됩니다)")
+                    delete_button = st.form_submit_button("학교 삭제")
+
+                if delete_button:
+                    if not confirm_checkbox:
+                        st.error("삭제하려면 확인 체크박스를 체크해 주세요.")
+                    else:
+                        try:
+                            delete_school_from_config(school_to_delete)
+                            st.success(f"'{school_to_delete}' 학교가 성공적으로 삭제되었습니다!")
+                            st.rerun()
+                        except Exception as e:
+                            st.error(f"오류 발생: {e}")
+
     if not selected_schools:
         st.warning("조회할 학교를 하나 이상 선택해 주세요.")
         return
@@ -375,33 +523,37 @@ def main() -> None:
         st.info("선택한 학교들의 전체 일정이 없습니다.")
         return
 
-    years, default_year, default_month = month_options(all_events)
-    with st.sidebar:
-        selected_year = st.selectbox("연도", years, index=years.index(default_year) if default_year in years else 0)
-        selected_month = st.selectbox("월", list(range(1, 13)), index=default_month - 1)
+    if "current_year" not in st.session_state or "current_month" not in st.session_state:
+        today = date.today()
+        years = {event.start_date.year for event in all_events} | {event.end_date.year for event in all_events}
+        st.session_state.current_year = today.year if (not years or today.year in years) else sorted(years)[0]
+        st.session_state.current_month = today.month
 
     use_school_colors = len(selected_schools) > 1
     prefix_school = len(selected_schools) > 1
 
     calendar_result = render_calendar(
         all_events,
-        selected_year,
-        selected_month,
+        st.session_state.current_year,
+        st.session_state.current_month,
         school_name="-".join(selected_schools),
         school_colors=school_colors if use_school_colors else None,
         prefix_school=prefix_school,
         selected_schools=selected_schools,
     )
 
-    list_year, list_month = month_from_calendar_result(
-        calendar_result,
-        selected_year,
-        selected_month,
-    )
+    view_date = get_calendar_view_date(calendar_result)
+    if view_date:
+        year, month = view_date
+        if year != st.session_state.current_year or month != st.session_state.current_month:
+            st.session_state.current_year = year
+            st.session_state.current_month = month
+            st.rerun()
+
     month_events = [
         event
         for event in all_events
-        if overlaps_month(event, list_year, list_month)
+        if overlaps_month(event, st.session_state.current_year, st.session_state.current_month)
     ]
 
     st.metric("선택한 월 일정", len(month_events))
